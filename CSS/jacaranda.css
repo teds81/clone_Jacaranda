@@ -1,0 +1,1081 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .accueil {
+    display: block;
+  }
+  .accueil .texte {
+    width: 100%;
+  }
+  .accueil .texte h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .accueil .texte h2 br {
+    display: none;
+  }
+  .accueil .texte p {
+    font-size: 3vw !important;
+    text-align: center;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+    margin-left: 10vw;
+  }
+  .accueil .image {
+    display: none;
+  }
+}
+header {
+  width: 100%;
+  color: white;
+  background: rgb(11, 20, 62);
+  padding: 0.5vw 0;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+header .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .logo {
+  margin-left: 6vw;
+}
+header .head .logo img {
+  width: 9vw;
+}
+header .head .right {
+  display: flex;
+  align-items: center;
+}
+header .head .right .nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .right .nav ul li {
+  list-style: none;
+  font-size: 2vw;
+  text-transform: lowercase;
+  margin-left: 2vw;
+}
+header .head .right .nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+header .head .right .nav ul .btn-head {
+  margin: 1vw 5vw;
+  font-size: 1.4vw;
+  font-weight: 100;
+  background: rgb(11, 20, 62);
+  padding: 0.5vw;
+  border-color: rgb(254, 202, 8);
+}
+header .head .right .nav ul .btn-head a {
+  color: rgb(254, 202, 8);
+  text-decoration: none;
+}
+header .bars, header .close {
+  font-size: 10vw;
+  margin-right: 3vw;
+  display: none;
+}
+header .nav-click {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 14vw !important;
+  margin-top: -100%;
+  background: #444;
+  overflow: hidden;
+  transition: top 15s both;
+  z-index: 12;
+}
+header .nav-click ul {
+  padding: 1.5vw;
+}
+header .nav-click ul li {
+  padding: 1vw 0;
+  list-style: none;
+  font-size: 3vw;
+  text-transform: lowercase;
+}
+header .nav-click ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+}
+
+.right .nav ul .home:hover a {
+  border-bottom: 0.2vw solid rgb(113, 192, 67) !important;
+  color: rgb(113, 192, 67);
+}
+
+.nav-click ul .home:hover a {
+  color: rgb(113, 192, 67);
+}
+
+#accueil {
+  border-bottom: 0.2vw solid rgb(113, 192, 67);
+}
+#accueil a {
+  color: rgb(113, 192, 67);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-bottom: 2vw;
+  }
+  header .head .logo {
+    margin-left: 5vw;
+  }
+  header .head .logo img {
+    width: 25vw;
+  }
+  header .btn-head {
+    font-size: 1.4vw;
+  }
+  header .nav {
+    display: none;
+  }
+  header .bars {
+    display: block;
+    font-size: 8vw;
+    margin-right: 2vw;
+  }
+  header .close {
+    font-size: 8vw;
+  }
+  header .nav-click {
+    display: none;
+    position: absolute;
+    padding-top: 3vw;
+    background: rgb(11, 20, 62);
+  }
+  header .nav-click ul {
+    display: flex;
+    flex-direction: column !important;
+  }
+  header .nav-click ul li {
+    padding: 1vw 0;
+    list-style: none;
+    font-size: 6vw;
+    text-transform: lowercase;
+    border-bottom: 0.2vw solid white;
+  }
+  header .nav-click ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+  }
+  header .nav-click ul .btn-head {
+    margin: 20vw 5vw 1vw;
+    font-size: 5vw;
+    font-weight: 100;
+    background: rgb(11, 20, 62);
+    padding: 1vw 30vw;
+    border-color: rgb(254, 202, 8);
+  }
+  header .nav-click ul .btn-head a {
+    color: rgb(254, 202, 8);
+    text-decoration: none;
+  }
+  header .nav-click ul .btn-head:hover {
+    color: white;
+    background: rgb(113, 192, 67);
+    border-color: rgb(113, 192, 67);
+    transform: scale(1.1);
+  }
+  header .nav-click.active {
+    display: block !important;
+    margin-top: 0;
+    transition: 10s;
+    overflow: hidden;
+  }
+  header .nav-click.close {
+    display: none !important;
+    margin-top: 0;
+    transition: 3s;
+    overflow: visible;
+  }
+}
+.accueil {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5.5vw;
+}
+.accueil .texte {
+  padding: 3vw 5vw;
+  margin-top: 3vw;
+}
+.accueil .texte h2 {
+  font-size: 4vw;
+  font-weight: normal;
+  margin-left: 4vw;
+}
+.accueil .texte h2 span {
+  color: rgb(113, 192, 67);
+}
+.accueil .texte p {
+  font-size: 2vw;
+  margin: 1vw 1vw 4vw;
+}
+.accueil .texte .btn-informe {
+  background: #182A80;
+  color: white;
+  font-size: 2vw;
+  padding: 2vw 5vw;
+  border-radius: 1vw;
+  margin-left: 4vw;
+}
+.accueil .image {
+  width: 45vw;
+  height: 45vw;
+  position: relative;
+}
+.accueil .image #one, .accueil .image #two, .accueil .image #three, .accueil .image #four {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.accueil .image img {
+  width: 100%;
+  height: 100%;
+}
+.accueil .image .prev, .accueil .image .next {
+  font-size: 2.5em;
+  border: 0.2vw solid rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 0.5vw 0.9vw;
+  color: white;
+  text-shadow: 0 0 10px black;
+  position: absolute;
+  top: calc(50% - 20px);
+}
+.accueil .image .prev {
+  left: 35px;
+}
+.accueil .image .next {
+  right: 35px;
+}
+.accueil .image #one, .accueil .image #two, .accueil .image #three {
+  opacity: 0;
+  visibility: hidden;
+}
+.accueil .image #four:target, .accueil .image #one:target, .accueil .image #two:target, .accueil .image #three:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.information {
+  display: flex;
+}
+.information .demande {
+  width: 25vw;
+  height: 33vw;
+  padding: 2vw;
+  box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.5);
+  margin: 0 2vw;
+  border-radius: 1vw;
+}
+.information .demande .plane1 {
+  margin: 1vw;
+  margin-left: 7vw;
+  position: relative;
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+  background: rgba(113, 192, 67, 0.5);
+}
+.information .demande .plane1 .plane2 {
+  position: absolute;
+  top: 0.5vw;
+  left: 0.5vw;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background: rgba(113, 192, 67, 0.7);
+}
+.information .demande .plane1 .plane2 .fa-plane {
+  position: absolute;
+  top: 0.6vw;
+  left: 0.6vw;
+  font-size: 1.5vw;
+  padding: 1vw;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid rgb(113, 192, 67);
+  background: rgba(113, 192, 67, 0.9);
+  z-index: 1;
+}
+.information .demande h3 {
+  font-weight: normal;
+  font-size: 1.4vw;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+.information .demande p {
+  font-size: 1vw;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+.information .demande .btn-devis {
+  font-size: 1.4vw;
+  color: white;
+  background: rgb(113, 192, 67);
+  border: none;
+  padding: 1vw 2vw;
+  display: block;
+  margin: 0 auto;
+}
+.information .demande #ou {
+  margin: 1vw 0;
+  font-size: 1vw;
+}
+.information .demande .phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.information .demande .phone .fa-phone {
+  transform: rotate(90deg);
+  color: rgb(113, 192, 67);
+  margin-right: 1vw;
+}
+.information .demande .phone p {
+  font-size: 1vw;
+  padding-top: 0.5vw;
+}
+.information .reservation {
+  padding-top: 8vw;
+  margin-left: 3vw;
+}
+.information .reservation h2 {
+  font-size: 2vw;
+  color: #182A80;
+}
+.information .reservation a {
+  color: white;
+}
+.information .reservation a button {
+  background: rgb(113, 192, 67);
+  margin: 1vw 0;
+  font-size: 1vw;
+  padding: 1vw 3vw;
+  border: none;
+  color: white;
+}
+.information .reservation a .btn-paque {
+  color: rgb(119, 132, 158);
+  background: rgb(242, 243, 245);
+  margin-left: 2vw;
+}
+.information .reservation .tete {
+  width: 65vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(113, 192, 67);
+  color: white;
+  padding: 1vw;
+  padding-right: 16vw;
+}
+.information .reservation .tete h4 {
+  font-size: 1vw;
+}
+.information .reservation .tete h4 span {
+  font-size: 1vw;
+}
+.information .reservation .tete #retour {
+  margin-left: 2vw;
+}
+.information .reservation .tete #companie {
+  margin-right: 1vw;
+}
+.information .reservation .date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5vw 2vw 0.5vw 0;
+  color: rgb(119, 132, 158);
+  padding-left: 1vw;
+  padding-right: 5vw;
+}
+.information .reservation .date p {
+  font-size: 1vw;
+}
+.information .reservation .date .dates {
+  margin-left: 1vw;
+}
+.information .reservation .date .air {
+  margin-left: 5vw;
+}
+.information .reservation .date .btn-reserver {
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
+  color: rgb(119, 132, 158);
+}
+.information .reservation .gris {
+  background: rgb(242, 243, 245);
+}
+.information .reservation .Corsair .air {
+  margin-right: 1.4vw;
+}
+.information .reservation .Kenya .air {
+  margin-right: -2vw;
+}
+.information .reservation .Ethiopian .air {
+  margin-right: -3vw;
+}
+.information .reservation .Turkish .air {
+  margin-right: -2vw;
+}
+.information .reservation .btn a button {
+  font-size: 1.4vw;
+  border: none;
+  color: white;
+  padding: 1vw 6vw;
+}
+.information .reservation .btn a button .fas {
+  font-size: 1vw;
+  margin-left: 1vw;
+}
+.information .reservation .btn a .btn-online {
+  background: #182A80;
+}
+.information .reservation .btn a .btn-formalite {
+  background: #44494f;
+  margin-left: 0.7vw;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.image img {
+  width: 25vw;
+  height: 25vw;
+  position: relative;
+}
+.image .images {
+  position: relative;
+}
+.image .images .box {
+  width: 20vw;
+  height: 10vw;
+  position: absolute;
+  top: 18vw;
+  right: 0;
+  background: #182A80;
+  padding: 1.5vw;
+}
+.image .images .box a {
+  text-decoration: none;
+}
+.image .images .box a p {
+  font-size: 2vw;
+  color: rgb(255, 255, 255);
+}
+.image .images .box a .fas {
+  position: absolute;
+  top: 6vw;
+  right: 2vw;
+  z-index: 1;
+  font-size: 2vw;
+  color: rgb(255, 255, 255);
+  margin-left: 17vw;
+}
+
+.blog {
+  margin-top: 5vw;
+  display: flex;
+}
+.blog .raison {
+  width: 40vw;
+  height: 28vw;
+  box-shadow: 0 0 1vw black;
+  padding: 2vw;
+  background: rgb(242, 243, 245);
+}
+.blog .raison h2 {
+  font-size: 2vw;
+  margin: 2vw 0;
+}
+.blog .raison p {
+  margin: 1vw 0;
+  font-size: 1.4vw;
+}
+.blog .raison .btn-raison {
+  font-size: 1.4vw;
+  padding: 1vw 2vw;
+  margin-top: 2vw;
+  color: white;
+  background: #182A80;
+}
+.blog .raison .btn-raison .fas {
+  margin-left: 1vw;
+}
+.blog .blog-right {
+  margin-left: 3vw;
+  margin-bottom: 2vw;
+}
+.blog .blog-right h2 {
+  font-size: 2vw;
+  margin-bottom: 2vw;
+}
+.blog .blog-right .box-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.blog .blog-right .box-right .box-flex .paragraphe {
+  background: #182A80;
+  width: 18vw;
+  height: 8vw;
+  color: white;
+  padding: 1vw;
+}
+.blog .blog-right .box-right .box-flex .paragraphe h3 {
+  font-size: 1.4vw;
+  margin: 1vw 0;
+}
+.blog .blog-right .box-right .box-flex .paragraphe p {
+  font-size: 1.2vw;
+  margin-bottom: 1vw;
+}
+.blog .blog-right .box-right .box-flex img {
+  width: 18vw;
+  height: 13vw;
+  margin-right: 1vw;
+}
+
+.video {
+  width: 100%;
+  background: #1f1f1f;
+}
+.video h2 {
+  font-size: 3vw;
+}
+.video .nos-video {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.video .nos-video .v-left {
+  width: 65vw;
+  height: 30vw;
+}
+.video .nos-video .v-left video {
+  width: 100%;
+  height: 30vw;
+}
+.video .nos-video .v-left .invisible {
+  display: none;
+}
+.video .nos-video .v-left #rn7, .video .nos-video .v-left #play {
+  width: 100%;
+  height: 30vw;
+}
+.video .nos-video .v-right {
+  width: 30vw;
+  height: 30vw;
+  padding: 1vw;
+  border: 1px solid rgb(119, 132, 158);
+}
+.video .nos-video .v-right h2 {
+  font-size: 1.4vw;
+  margin-bottom: 1vw;
+  color: white;
+  background: rgba(31, 31, 31, 0.1);
+}
+.video .nos-video .v-right .video-1 {
+  display: flex;
+  margin-top: 1vw;
+  position: relative;
+}
+.video .nos-video .v-right .video-1 .icon1 {
+  position: absolute;
+  top: 1.5vw;
+  left: 3vw;
+}
+.video .nos-video .v-right .video-1 video {
+  width: 10vw;
+  height: 6vw;
+  margin-right: 1vw;
+}
+.video .nos-video .v-right .video-1 p {
+  font-size: 1.4vw;
+  color: white;
+}
+.video .nos-video .v-right .video-1 span {
+  font-size: 1vw;
+  color: rgb(119, 132, 158);
+}
+
+.event {
+  display: flex;
+  margin: 4vw 2vw;
+  align-items: center;
+  justify-content: space-between;
+}
+.event .telecharger {
+  width: 45vw;
+  height: 15vw;
+  padding: 2vw 4vw;
+  border: 1px solid black;
+}
+.event .telecharger h2 {
+  font-size: 2vw;
+  margin: 1vw 0;
+}
+.event .telecharger p {
+  font-size: 1.4vw;
+  margin-bottom: 1vw;
+}
+.event .telecharger .btn-download {
+  font-size: 1.4vw;
+  color: white;
+  background: rgb(113, 192, 67);
+  padding: 1vw 2vw;
+  border: none;
+}
+.event .flash {
+  background: rgb(0, 154, 182);
+  width: 45vw;
+  height: 15vw;
+  padding: 4vw;
+}
+.event .flash h2 {
+  font-size: 2.4vw;
+  margin-bottom: 2vw;
+  color: white;
+}
+.event .flash .btn-profiter {
+  color: white;
+  font-size: 1.4vw;
+  padding: 1vw 2vw;
+  border-color: white;
+  background: rgb(0, 154, 182);
+}
+
+.photo {
+  background: rgb(242, 243, 245);
+  padding: 2vw 0;
+}
+.photo h2 {
+  font-size: 2vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  color: #182A80;
+}
+.photo p {
+  font-size: 1.4vw;
+  text-align: center;
+  margin-bottom: 1vw;
+  color: #44494f;
+}
+
+.parent {
+  padding: 1vw 3vw;
+}
+.parent .slide-im .img img {
+  width: 18vw;
+  height: 10vw;
+  margin: 1vw 1vw;
+  border-radius: 0.5vw;
+}
+
+.contact {
+  background: rgb(11, 20, 62);
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+}
+.contact h2, .contact p, .contact i, .contact a {
+  color: rgb(255, 255, 255);
+}
+.contact h2 {
+  font-size: 2vw;
+  text-decoration: underline;
+}
+.contact p {
+  font-size: 1.4vw;
+  margin: 0.5vw;
+}
+.contact i {
+  font-size: 1.4vw;
+}
+.contact .place {
+  display: flex;
+}
+.contact .place i {
+  margin-top: 1vw;
+}
+.contact .num-phone, .contact .impression {
+  display: flex;
+  align-items: center;
+}
+.contact .num-phone i {
+  transform: rotate(90deg);
+}
+.contact .mail a {
+  display: flex;
+  align-items: center;
+}
+.contact .input {
+  display: flex;
+  align-items: center;
+}
+.contact .input #email {
+  font-size: 1vw;
+  padding: 0.5vw 5vw 0.5vw 0.5vw;
+}
+.contact .input .btn-souscrire {
+  color: rgb(255, 255, 255);
+  background: rgb(113, 192, 67);
+  border: none;
+  padding: 0.35vw;
+  font-size: 1.4vw;
+}
+
+footer {
+  background: #182A80;
+  padding: 2vw;
+}
+footer p {
+  color: rgb(255, 255, 255);
+  font-size: 1.4vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  .accueil {
+    padding-top: 15vw;
+  }
+  .accueil .texte h2 {
+    font-size: 5vw;
+  }
+  .accueil .texte p {
+    font-size: 3vw;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    display: block;
+    margin: auto;
+  }
+  .accueil .image {
+    display: none;
+  }
+  .information {
+    display: block;
+  }
+  .information .demande {
+    margin-bottom: 2vw;
+    width: 95%;
+    height: 90vw;
+  }
+  .information .demande .plane1 {
+    margin-left: 43vw;
+    margin-bottom: 2vw;
+  }
+  .information .demande h3 {
+    font-size: 4vw;
+  }
+  .information .demande p {
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    color: rgb(119, 132, 158);
+  }
+  .information .demande .btn-devis, .information .demande #ou {
+    display: none;
+  }
+  .information .demande .phone {
+    border: 1px solid black;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    margin-left: 28vw;
+    margin-bottom: 3vw;
+  }
+  .information .demande .phone i {
+    font-size: 3vw;
+  }
+  .information .demande .phone p {
+    font-size: 3vw;
+  }
+  .information .reservation h2 {
+    font-size: 4vw;
+    margin: 1vw 5vw;
+    text-align: center;
+  }
+  .information .reservation a {
+    text-decoration: none;
+  }
+  .information .reservation a button {
+    width: 75%;
+    font-size: 3vw;
+    display: block;
+    margin: 0 auto;
+  }
+  .information .reservation a .btn-paque {
+    display: block;
+    margin: 0 auto;
+    height: 7vw;
+  }
+  .information .reservation .tete {
+    width: 97%;
+    height: 7vw;
+    margin-top: 4vw;
+  }
+  .information .reservation .tete h4 {
+    font-size: 2.5vw;
+  }
+  .information .reservation .tete h4 span {
+    font-size: 2vw;
+  }
+  .information .reservation .tete #tarif {
+    margin-left: 3vw;
+  }
+  .information .reservation .date {
+    height: 7vw;
+  }
+  .information .reservation .date p {
+    font-size: 2.4vw;
+  }
+  .information .reservation .date .btn-reserver {
+    font-size: 2.4vw;
+  }
+  .information .reservation .btn a {
+    margin: 0.5vw 1vw;
+  }
+  .information .reservation .btn a button {
+    font-size: 2.4vw;
+    display: block;
+    margin: 0 auto;
+    padding: 1vw 0;
+  }
+  .information .reservation .btn a button i {
+    font-size: 3vw;
+  }
+  .information .reservation .btn a .btn-formalite {
+    display: block;
+    margin: 0 auto;
+  }
+  .image {
+    position: relative;
+  }
+  .image .images img {
+    display: none;
+  }
+  .image .images .box {
+    width: 40vw;
+    position: absolute;
+  }
+  .image .images .box a p {
+    font-size: 3vw;
+  }
+  .image .images .box a p br {
+    display: none;
+  }
+  .image .images #box1 {
+    left: 10vw;
+    top: 1vw;
+  }
+  .image .images #box2 {
+    left: -22.5vw;
+    top: 11vw;
+  }
+  .image .images #box3 {
+    left: -54.8vw;
+    top: 20vw;
+  }
+  .blog {
+    margin-top: 37vw;
+    display: block;
+  }
+  .blog .raison {
+    width: 100%;
+    height: 40vw;
+  }
+  .blog .raison h2 {
+    font-size: 4vw;
+  }
+  .blog .raison h2 br {
+    display: none;
+  }
+  .blog .raison p {
+    font-size: 3vw;
+  }
+  .blog .raison .btn-raison {
+    font-size: 3vw;
+    padding: 2vw 3vw;
+    display: block;
+    margin: 0 auto;
+  }
+  .blog .blog-right {
+    margin-left: 3vw;
+    margin-bottom: 2vw;
+  }
+  .blog .blog-right h2 {
+    font-size: 2vw;
+    margin-bottom: 2vw;
+  }
+  .blog .blog-right .box-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .blog .blog-right .box-right .box-flex .paragraphe {
+    width: 40vw;
+    height: 20vw;
+    color: white;
+    padding: 1vw;
+  }
+  .blog .blog-right .box-right .box-flex .paragraphe h3 {
+    font-size: 4vw;
+    margin: 1vw 0;
+  }
+  .blog .blog-right .box-right .box-flex .paragraphe p {
+    font-size: 3vw;
+    margin-bottom: 1vw;
+  }
+  .blog .blog-right .box-right .box-flex img {
+    width: 40vw;
+    height: 30vw;
+    margin-right: 1vw;
+  }
+  .video h2 {
+    font-size: 4vw;
+    color: white;
+    margin: 2vw;
+  }
+  .video .nos-video {
+    display: block;
+  }
+  .video .nos-video .v-left {
+    width: 100%;
+  }
+  .video .nos-video .v-right {
+    width: 100%;
+    height: auto;
+  }
+  .video .nos-video .v-right .video-1 {
+    position: relative;
+  }
+  .video .nos-video .v-right .video-1 .icon1 {
+    position: absolute;
+    top: 4.5vw;
+    left: 8vw;
+  }
+  .video .nos-video .v-right .video-1 video {
+    width: 20vw;
+    height: auto;
+  }
+  .video .nos-video .v-right .video-1 p {
+    font-size: 3vw;
+  }
+  .video .nos-video .v-right .video-1 p span {
+    font-size: 2vw;
+  }
+  .parent {
+    padding: 0 5vw 0 6vw;
+  }
+  .parent .slide-im .img img {
+    width: 43vw !important;
+    height: 25vw !important;
+    margin: 1vw 0.5vw;
+    border-radius: 0.5vw;
+  }
+  .contact {
+    display: block;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 4vw;
+    margin: 2vw 0;
+  }
+  .contact p {
+    font-size: 3vw;
+    margin: 2vw 0;
+  }
+  .contact i {
+    font-size: 3vw;
+    margin-right: 2vw;
+  }
+  .contact .place {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact .mail, .contact .num-phone, .contact .impression {
+    margin: 2vw 30vw;
+  }
+  .newsletter {
+    margin-bottom: 2vw;
+  }
+  .newsletter .input input {
+    width: 75vw;
+    height: 6vw;
+    padding: 1vw;
+  }
+  .newsletter .input ::-moz-placeholder {
+    font-size: 3vw;
+  }
+  .newsletter .input ::placeholder {
+    font-size: 3vw;
+  }
+  .newsletter .input .btn-souscrire {
+    font-size: 3.3vw;
+    padding: 1vw;
+  }
+  .newsletter p span {
+    display: none;
+  }
+  footer p {
+    font-size: 4vw;
+  }
+}
+button:hover {
+  background: orangered !important;
+  color: white !important;
+  border-color: orangered !important;
+}
+
+.btn-head:hover {
+  background: rgb(113, 192, 67) !important;
+  border-color: white !important;
+  transform: scale(1.2);
+  color: white !important;
+}
+
+.fa-google-plus-g:hover {
+  color: orange !important;
+}
+
+.fa-facebook-f:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-twitter:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-youtube:hover {
+  color: red !important;
+}/*# sourceMappingURL=jacaranda.css.map */

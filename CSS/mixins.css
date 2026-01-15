@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+  .accueil {
+    display: block;
+  }
+  .accueil .texte {
+    width: 100%;
+  }
+  .accueil .texte h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .accueil .texte h2 br {
+    display: none;
+  }
+  .accueil .texte p {
+    font-size: 3vw !important;
+    text-align: center;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+    margin-left: 10vw;
+  }
+  .accueil .image {
+    display: none;
+  }
+}/*# sourceMappingURL=mixins.css.map */

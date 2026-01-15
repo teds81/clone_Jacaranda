@@ -1,0 +1,699 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .accueil {
+    display: block;
+  }
+  .accueil .texte {
+    width: 100%;
+  }
+  .accueil .texte h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .accueil .texte h2 br {
+    display: none;
+  }
+  .accueil .texte p {
+    font-size: 3vw !important;
+    text-align: center;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+    margin-left: 10vw;
+  }
+  .accueil .image {
+    display: none;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  color: white;
+  background: rgb(11, 20, 62);
+  padding: 0.5vw 0;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+header .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .logo {
+  margin-left: 6vw;
+}
+header .head .logo img {
+  width: 9vw;
+}
+header .head .right {
+  display: flex;
+  align-items: center;
+}
+header .head .right .nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .right .nav ul li {
+  list-style: none;
+  font-size: 2vw;
+  text-transform: lowercase;
+  margin-left: 2vw;
+}
+header .head .right .nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+header .head .right .nav ul .btn-head {
+  margin: 1vw 5vw;
+  font-size: 1.4vw;
+  font-weight: 100;
+  background: rgb(11, 20, 62);
+  padding: 0.5vw;
+  border-color: rgb(254, 202, 8);
+}
+header .head .right .nav ul .btn-head a {
+  color: rgb(254, 202, 8);
+  text-decoration: none;
+}
+header .bars, header .close {
+  font-size: 10vw;
+  margin-right: 3vw;
+  display: none;
+}
+header .nav-click {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 14vw !important;
+  margin-top: -100%;
+  background: #444;
+  overflow: hidden;
+  transition: top 15s both;
+  z-index: 12;
+}
+header .nav-click ul {
+  padding: 1.5vw;
+}
+header .nav-click ul li {
+  padding: 1vw 0;
+  list-style: none;
+  font-size: 3vw;
+  text-transform: lowercase;
+}
+header .nav-click ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+}
+
+.right .nav ul .home:hover a {
+  border-bottom: 0.2vw solid rgb(113, 192, 67) !important;
+  color: rgb(113, 192, 67);
+}
+
+.nav-click ul .home:hover a {
+  color: rgb(113, 192, 67);
+}
+
+#voyage {
+  border-bottom: 0.2vw solid rgb(113, 192, 67);
+}
+#voyage a {
+  color: rgb(113, 192, 67);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-bottom: 2vw;
+  }
+  header .head .logo {
+    margin-left: 5vw;
+  }
+  header .head .logo img {
+    width: 25vw;
+  }
+  header .btn-head {
+    font-size: 1.4vw;
+  }
+  header .nav {
+    display: none;
+  }
+  header .bars {
+    display: block;
+    font-size: 8vw;
+    margin-right: 2vw;
+  }
+  header .close {
+    font-size: 8vw;
+  }
+  header .nav-click {
+    display: none;
+    position: absolute;
+    padding-top: 3vw;
+    background: rgb(11, 20, 62);
+  }
+  header .nav-click ul {
+    display: flex;
+    flex-direction: column !important;
+  }
+  header .nav-click ul li {
+    padding: 1vw 0;
+    list-style: none;
+    font-size: 6vw;
+    text-transform: lowercase;
+    border-bottom: 0.2vw solid white;
+  }
+  header .nav-click ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+  }
+  header .nav-click ul .btn-head {
+    margin: 20vw 5vw 1vw;
+    font-size: 5vw;
+    font-weight: 100;
+    background: rgb(11, 20, 62);
+    padding: 1vw 30vw;
+    border-color: rgb(254, 202, 8);
+  }
+  header .nav-click ul .btn-head a {
+    color: rgb(254, 202, 8);
+    text-decoration: none;
+  }
+  header .nav-click ul .btn-head:hover {
+    color: white;
+    background: rgb(113, 192, 67);
+    border-color: rgb(113, 192, 67);
+    transform: scale(1.1);
+  }
+  header .nav-click.active {
+    display: block !important;
+    margin-top: 0;
+    transition: 10s;
+    overflow: hidden;
+  }
+  header .nav-click.close {
+    display: none !important;
+    margin-top: 0;
+    transition: 3s;
+    overflow: visible;
+  }
+}
+h1 {
+  font-size: 4vw;
+  font-weight: normal;
+  margin: 8vw 0 2vw 0;
+}
+h1 span {
+  font-weight: bold;
+}
+
+.voyage {
+  display: flex;
+}
+.voyage a {
+  color: white;
+  font-size: 2vw;
+  text-decoration: none;
+}
+.voyage #sejour a, .voyage #theme a, .voyage #mesure a {
+  display: none;
+}
+.voyage .circuit {
+  width: 20%;
+}
+.voyage .circuit .flex1 {
+  display: flex;
+  align-items: center;
+  margin: 1vw;
+  padding: 1vw;
+  background: #bbb;
+}
+.voyage .circuit .flex1 img {
+  width: 5vw;
+  margin-right: 2vw;
+}
+.voyage .circuit .flex1 p {
+  font-size: 1.4vw;
+  font-weight: bold;
+}
+.voyage .circuit #découverte {
+  background: rgb(140, 59, 22);
+  color: white;
+}
+.voyage .circuit #découverte a .next {
+  font-size: 2vw;
+  display: block;
+}
+.voyage .circuit #cgv {
+  color: white;
+  background: #444;
+}
+.voyage .circuit #cgv p {
+  font-size: 1.4vw;
+}
+.voyage .circuit #cgv a .next {
+  font-size: 2vw;
+  color: white;
+}
+.voyage .right {
+  width: 80%;
+}
+.voyage .right .place {
+  display: flex;
+  flex-wrap: wrap;
+}
+.voyage .right .place .itineraire {
+  width: 18vw;
+  margin: 1vw 1.5vw 1vw 0;
+}
+.voyage .right .place .itineraire .para {
+  padding: 1vw;
+  background: rgb(140, 59, 22);
+  height: 12vw;
+  color: white;
+}
+.voyage .right .place .itineraire .para p {
+  font-size: 1vw;
+  color: yellow;
+}
+.voyage .right .place .itineraire .para h2 {
+  font-size: 1.4vw;
+  padding: 1vw 0;
+}
+.voyage .right .place .itineraire img {
+  width: 18vw;
+  height: 14vw;
+}
+.voyage .right .place .itineraire #sary {
+  height: 12vw;
+  margin-top: 1vw;
+}
+
+.video {
+  width: 100%;
+  background: #1f1f1f;
+}
+.video h2 {
+  font-size: 3vw;
+}
+.video .nos-video {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.video .nos-video .v-left {
+  width: 65vw;
+  height: 30vw;
+}
+.video .nos-video .v-left video {
+  width: 100%;
+  height: 30vw;
+}
+.video .nos-video .v-left .invisible {
+  display: none;
+}
+.video .nos-video .v-left #rn7, .video .nos-video .v-left #play {
+  width: 100%;
+  height: 30vw;
+}
+.video .nos-video .v-right {
+  width: 30vw;
+  height: 30vw;
+  padding: 1vw;
+  border: 1px solid rgb(119, 132, 158);
+}
+.video .nos-video .v-right h2 {
+  font-size: 1.4vw;
+  margin-bottom: 1vw;
+  color: white;
+  background: rgba(31, 31, 31, 0.1);
+}
+.video .nos-video .v-right .video-1 {
+  display: flex;
+  margin-top: 1vw;
+  position: relative;
+}
+.video .nos-video .v-right .video-1 .icon1 {
+  position: absolute;
+  top: 1.5vw;
+  left: 3vw;
+}
+.video .nos-video .v-right .video-1 video {
+  width: 10vw;
+  height: 6vw;
+  margin-right: 1vw;
+  position: relative;
+}
+.video .nos-video .v-right .video-1 p {
+  font-size: 1.4vw;
+  color: white;
+}
+.video .nos-video .v-right .video-1 span {
+  font-size: 1vw;
+  color: rgb(119, 132, 158);
+}
+
+.event {
+  display: flex;
+  margin: 4vw 2vw;
+  align-items: center;
+  justify-content: space-between;
+}
+.event .telecharger {
+  width: 45vw;
+  height: 15vw;
+  padding: 2vw 4vw;
+  border: 1px solid black;
+}
+.event .telecharger h2 {
+  font-size: 2vw;
+  margin: 1vw 0;
+}
+.event .telecharger p {
+  font-size: 1.4vw;
+  margin-bottom: 1vw;
+}
+.event .telecharger .btn-download {
+  font-size: 1.4vw;
+  color: white;
+  background: rgb(113, 192, 67);
+  padding: 1vw 2vw;
+  border: none;
+}
+.event .flash {
+  background: rgb(0, 154, 182);
+  width: 45vw;
+  height: 15vw;
+  padding: 4vw;
+}
+.event .flash h2 {
+  font-size: 2.4vw;
+  margin-bottom: 2vw;
+  color: white;
+}
+.event .flash .btn-profiter {
+  color: white;
+  font-size: 1.4vw;
+  padding: 1vw 2vw;
+  border-color: white;
+  background: rgb(0, 154, 182);
+}
+
+.photo {
+  background: rgb(242, 243, 245);
+  padding: 2vw 0;
+}
+.photo h2 {
+  font-size: 2vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  color: #182A80;
+}
+.photo p {
+  font-size: 1.4vw;
+  text-align: center;
+  margin-bottom: 1vw;
+  color: #44494f;
+}
+.photo .parent {
+  padding: 3vw;
+}
+.photo .parent .slide-im .img img {
+  width: 17vw;
+  height: 10vw;
+  margin: 1vw 0.5vw;
+  border-radius: 0.5vw;
+}
+
+.contact {
+  background: rgb(11, 20, 62);
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+}
+.contact h2, .contact p, .contact i, .contact a {
+  color: rgb(255, 255, 255);
+}
+.contact h2 {
+  font-size: 2vw;
+  text-decoration: underline;
+}
+.contact p {
+  font-size: 1.4vw;
+  margin: 0.5vw;
+}
+.contact i {
+  font-size: 1.4vw;
+}
+.contact .place {
+  display: flex;
+}
+.contact .place i {
+  margin-top: 1vw;
+}
+.contact .num-phone, .contact .impression {
+  display: flex;
+  align-items: center;
+}
+.contact .num-phone i {
+  transform: rotate(90deg);
+}
+.contact .mail a {
+  display: flex;
+  align-items: center;
+}
+.contact .input {
+  display: flex;
+  align-items: center;
+}
+.contact .input #email {
+  font-size: 1vw;
+  padding: 0.5vw 5vw 0.5vw 0.5vw;
+}
+.contact .input .btn-souscrire {
+  color: rgb(255, 255, 255);
+  background: rgb(113, 192, 67);
+  border: none;
+  padding: 0.35vw;
+  font-size: 1.4vw;
+}
+
+footer {
+  background: #182A80;
+  padding: 2vw;
+}
+footer p {
+  color: rgb(255, 255, 255);
+  font-size: 1.4vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .flex {
+    width: 100%;
+  }
+  .flex h1 {
+    margin: 18vw 2vw 2vw 2vw;
+    font-size: 4vw;
+  }
+  .flex .voyage {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex .voyage .circuit {
+    width: 100%;
+  }
+  .flex .voyage .circuit img {
+    display: none;
+  }
+  .flex .voyage .circuit .num1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex .voyage .circuit .num1 .flex1 {
+    width: 35vw;
+  }
+  .flex .voyage .circuit .num1 .flex1 p {
+    font-size: 3vw;
+  }
+  .flex .voyage .circuit #mesure {
+    width: 30vw;
+  }
+  .flex .voyage .circuit #mesure p {
+    font-size: 3vw;
+  }
+  .flex .voyage .circuit #cgv {
+    width: 50%;
+  }
+  .flex .voyage .circuit #cgv p {
+    font-size: 3vw;
+  }
+  .flex .voyage .right {
+    display: flex;
+    width: 100%;
+  }
+  .flex .voyage .right .itineraire {
+    width: 40vw;
+    margin: 2vw 3vw;
+  }
+  .flex .voyage .right .itineraire .para {
+    height: 18vw;
+  }
+  .flex .voyage .right .itineraire .para p {
+    font-size: 2vw;
+  }
+  .flex .voyage .right .itineraire .para h2 {
+    font-size: 3vw;
+  }
+  .flex .voyage .right .itineraire img {
+    width: 100%;
+    height: 30vw;
+  }
+  .flex .voyage .right .itineraire #sary {
+    height: 30vw;
+    margin: 0;
+  }
+  .video h2 {
+    font-size: 4vw;
+    color: white;
+    margin: 2vw;
+  }
+  .video .nos-video {
+    display: block;
+  }
+  .video .nos-video .v-left {
+    width: 100%;
+  }
+  .video .nos-video .v-right {
+    width: 100%;
+    height: auto;
+  }
+  .video .nos-video .v-right .video-1 {
+    position: relative;
+  }
+  .video .nos-video .v-right .video-1 .icon1 {
+    position: absolute;
+    top: 4.5vw;
+    left: 8vw;
+  }
+  .video .nos-video .v-right .video-1 video {
+    width: 20vw;
+    height: auto;
+  }
+  .video .nos-video .v-right .video-1 p {
+    font-size: 3vw;
+  }
+  .video .nos-video .v-right .video-1 p span {
+    font-size: 2vw;
+  }
+  .parent {
+    padding: 0 5vw 0 6vw;
+  }
+  .parent .slide-im .img img {
+    width: 43vw !important;
+    height: 25vw !important;
+    margin: 1vw 0.5vw;
+    border-radius: 0.5vw;
+  }
+  .contact {
+    display: block;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 4vw;
+    margin: 2vw 0;
+  }
+  .contact p {
+    font-size: 3vw;
+    margin: 2vw 0;
+  }
+  .contact i {
+    font-size: 3vw;
+    margin-right: 2vw;
+  }
+  .contact .place {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact .mail, .contact .num-phone, .contact .impression {
+    margin: 2vw 30vw;
+  }
+  .newsletter {
+    margin-bottom: 2vw;
+  }
+  .newsletter .input input {
+    width: 75vw;
+    height: 6vw;
+    padding: 1vw;
+  }
+  .newsletter .input ::-moz-placeholder {
+    font-size: 3vw;
+  }
+  .newsletter .input ::placeholder {
+    font-size: 3vw;
+  }
+  .newsletter .input .btn-souscrire {
+    font-size: 3.3vw;
+    padding: 1vw;
+  }
+  .newsletter p span {
+    display: none;
+  }
+  footer p {
+    font-size: 4vw;
+  }
+}
+button:hover {
+  background: orangered !important;
+  color: white !important;
+  border-color: orangered !important;
+}
+
+.btn-head:hover {
+  background: rgb(113, 192, 67) !important;
+  border-color: white !important;
+  transform: scale(1.2);
+  color: white !important;
+}
+
+.itineraire .para:hover {
+  background: rgb(113, 192, 67) !important;
+}
+
+.fa-google-plus-g:hover {
+  color: orange !important;
+}
+
+.fa-facebook-f:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-twitter:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-youtube:hover {
+  color: red !important;
+}
+
+.flex1:hover {
+  background: rgb(139, 68, 40) !important;
+  color: white;
+}/*# sourceMappingURL=jVoyage.css.map */

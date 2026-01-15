@@ -1,0 +1,291 @@
+@mixin flex($jc:center,$ai:center,$fd:row){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+@mixin nav{
+    ul{
+        @include flex($jc:$sb);
+        li{
+            list-style: none;
+            font-size: 1.4vw;
+            text-transform: uppercase;
+            margin-left: 1vw;
+            a{
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+
+@mixin style{
+    .home::after{
+        content: "";
+        display: block;
+        width: 0vw;
+        margin: .1vw auto 0 auto;
+        height: .3vw;
+        border-radius: .5vw;
+        background:rgb(97, 178, 89);
+        transition: 0.2s ease-out;
+        text-align: center;
+    }
+    .home:hover::after{
+        width: 100%;
+    }
+}
+
+@mixin header{
+    header{
+        width: 100%;
+        color: white;
+        background: $mainty;
+        padding: .5vw 0;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        .head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logo{
+                margin-left: 6vw;
+                img{
+                    width: 9vw;
+                }
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                .nav{
+                    ul{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        li{
+                            list-style: none;
+                            font-size: 2vw;
+                            text-transform: lowercase;
+                            margin-left: 2vw;
+                            a{
+                                text-decoration: none;
+                                color: white;
+                                font-weight: 200;
+                            }
+                        }
+                        .btn-head{
+                            margin:1vw 5vw;
+                            font-size: 1.4vw;
+                            font-weight: 100;
+                            background: $mainty;
+                            padding: .5vw;
+                            border-color: $jaune;
+                            a{
+                                color: $jaune;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bars, .close{
+            font-size: 10vw;
+            margin-right: 3vw;
+            display: none;
+        }
+        // @include style;
+        .nav-click{
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 14vw !important;
+            margin-top: -100%;
+            background: #444;
+            overflow: hidden;
+            transition: top 15s both; 
+            z-index: 12;
+            ul{
+                padding: 1.5vw;
+                li{
+                    padding: 1vw 0;
+                    list-style: none;
+                    font-size: 3vw;
+                    text-transform: lowercase;
+                    a{
+                        text-decoration: none;
+                        color: $blanc; 
+                        font-weight: 200;
+                    }
+                }
+            }
+        }
+    }
+    
+    .right{
+        .nav{
+            ul{
+                .home:hover{
+                    a{
+                        border-bottom: .2vw solid $vert !important;
+                        color: $vert; 
+                    }
+                }
+            }
+        }
+    }
+    .nav-click{
+        ul{
+            .home:hover{
+                a{
+                    color: $vert;
+                }
+            }
+        }
+    }
+}
+
+// responsive
+@mixin responsive{
+    @media (max-width: 768px){
+        header{
+            padding-bottom: 2vw;
+            .head{
+                .logo{
+                    margin-left: 5vw;
+                    img{
+                        width: 25vw;
+                    }
+                }
+            }
+                .btn-head{
+                    font-size: 1.4vw;
+                }
+                .nav{
+                    display: none;
+                }
+                .bars{
+                    display: block;
+                    font-size: 8vw;
+                    margin-right: 2vw;
+                }
+                .close{
+                    font-size: 8vw;
+                }
+                .nav-click{
+                    display: none;
+                    position: absolute;
+                    padding-top: 3vw;
+                    background:$mainty;
+                    ul{
+                        display: flex;flex-direction:column !important ;
+                        li{
+                            padding: 1vw 0;
+                            list-style: none;
+                            font-size: 6vw;
+                            text-transform: lowercase;
+                            border-bottom: .2vw solid white;
+                            a{
+                                text-decoration: none;
+                                color: white;
+                                font-weight: 200;
+                            }
+                        }
+                        .btn-head{
+                            margin: 20vw 5vw 1vw;
+                            font-size: 5vw;
+                            font-weight: 100;
+                            background: $mainty;
+                            padding: 1vw 30vw;
+                            border-color: $jaune;
+                            a{
+                                color: $jaune;
+                                text-decoration: none;
+                            }
+                        }
+                        .btn-head:hover{
+                            color: white;
+                            background:  $vert;
+                            border-color: $vert;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                .nav-click.active{
+                    display: block !important;
+                    margin-top: 0;
+                    transition: 10s;
+                    overflow: hidden;
+                }
+                .nav-click.close{
+                    display: none !important;
+                    margin-top: 0;
+                    transition: 3s;
+                    overflow: visible;
+                }
+        }
+    }
+}
+
+@mixin footer{
+    footer{
+        background: $bleu;
+        padding: 2vw;
+        p{
+            color: $blanc;
+            font-size: 1.4vw;
+            text-align: center;
+        }
+    }
+}
+
+
+
+// RESPONSIVE
+@media (max-width: 768px){
+    .accueil{
+        display: block;
+        .texte{
+            width: 100%;
+            h2{
+                font-size: 4vw;
+                text-align: center;
+                br{
+                    display: none;
+                }
+            }
+            p{
+                font-size: 3vw !important;
+                text-align: center;
+            }
+            .btn-informe{
+                font-size: 3vw;
+                padding: 2vw 5vw;
+                margin-left: 10vw;
+            }
+        }
+        .image{
+            display: none;
+        }
+    }
+}
+
+@mixin btn{
+    button:hover{
+        background: orange;
+        color: white;
+    }
+}
+
+
+@mixin btn{
+    button:hover{
+        background: orange;
+    }
+}

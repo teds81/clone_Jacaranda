@@ -1,0 +1,694 @@
+@import "library/generalite.scss";
+@import "library/variable.scss";
+@import "library/mixins.scss";
+@include header;
+#contact{
+    border-bottom: .2vw solid $vert;
+    a{
+        color: $vert;
+    }
+}
+@include responsive;
+.contacts{
+    display: flex;
+    padding-top: 15vw;
+    #demande{
+        display: none;
+
+    }
+    .plana{
+        width: 29vw;
+        height: 60vw;
+        padding: 2vw;
+        box-shadow: 0 0 .5vw rgba(0, 0, 0, .5);
+        margin:0 2vw;
+        border-radius: 1vw;
+        .plane1{
+            margin: 1vw;
+            margin-left: 7vw;
+            position: relative;
+            width: 6vw;
+            height: 6vw;
+            border-radius: 50%;
+            background: rgba(113, 192, 67, .5);
+            .plane2{
+                position: absolute;
+                top: .5vw;
+                left: .5vw;
+                width: 5vw;
+                height: 5vw;
+                border-radius: 50%;
+                background: rgba(113, 192, 67, .7);
+                .fa-plane{
+                    position: absolute;
+                    top: .6vw;
+                    left: .6vw;
+                    font-size: 1.5vw;
+                    padding: 1vw;
+                    border-radius: 50%;
+                    color: white;
+                    border: 1px solid $vert;
+                    background: rgba(113, 192, 67, .9);
+                    z-index: 1;
+                }
+            }
+        }
+        h3{
+            font-weight: normal;
+            font-size: 1.4vw;
+            text-align: center;
+            margin-bottom: 2vw;
+            margin-top: 1;
+        }
+        p{
+            font-size: 1.4vw;
+            text-align: center;
+            margin-bottom: 1vw;
+        }
+        .btn-devis{
+            font-size: 1.4vw;
+            color: white;
+            background: $vert;
+            border: none;
+            padding: 1vw 2vw;
+            display: block;
+            margin: 0 auto;
+        }
+        #ou{
+            margin: 1vw 0;
+            font-size: 1vw;
+        }
+        .phone{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .fa-phone{
+                transform: rotate(90deg);
+                color: $vert;
+                margin-right: 1vw;
+            }
+            p{
+                font-size: 1.4vw;
+                padding-top: .5vw;
+            }
+        }
+    }
+    .demande{
+        width: 40vw;
+        h2{
+            font-size: 2vw;
+        }
+        input{
+            padding: .7vw .5vw ;
+            margin: .5vw 0;
+            border-radius: .7vw;
+        }
+        #nom, #time{
+            width: 19vw;
+        }
+        #prenom{
+            width: 18vw;
+        }
+        #email{
+            width: 25vw;
+        }
+        #number{
+            width: 12vw;
+        }
+        p{
+            font-size: 1.4vw;
+            margin: 1vw 0;
+        }
+        #jour{
+            width: 10vw;
+            margin-left: 2vw;
+        }
+        #adulte, #enfant, #bebe{
+            width: 10vw;
+            margin-right: 2vw;
+        }
+        ::placeholder{
+            font-size: 1vw;
+        }
+        textarea{
+            width: 90%;
+        }
+        .capcha{
+            width: 30vw;
+            height: 8vw;
+            box-shadow: 0 0 1px black;
+            padding: 1vw;
+            .check{
+                display: flex;
+                align-items: center;
+                .carre{
+                    width: 2vw;
+                    height: 2vw;
+                    box-shadow: 0 0 1px black;
+                    margin-right: 1vw;
+                }
+            }
+            .texte{
+                float: right;
+                p{
+                    font-size: .7vw;
+                    a{
+                        color: black;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .btn-envoyer{
+            background: $bleu;
+            color: $blanc;
+            font-weight: bold;
+            font-size: 1.4vw;
+            padding: .7vw 2.5vw;
+            border: none;
+            margin-top: 2vw;
+        }
+    }
+    .carte{
+        iframe{
+            width: 30vw;
+            height: 25vw;
+        }
+        a{
+            color: black;
+            .pleine{
+                background: #aaa;
+                padding-top: .7vw;
+                border-bottom: 5px solid #000;
+                p{
+                    text-align: center;
+                }
+            }
+        }
+        p{
+            font-size: 1.4vw;
+            margin: 1vw 0;
+        }
+        a{
+            text-decoration: none;
+            .btn-cvg{
+                font-size: 1.4vw;
+                padding: .7vw 2vw;
+            }
+        }
+    }
+}
+.info{
+    background: rgb(35, 163, 177);
+    margin: 2vw 1vw;
+    display: flex;
+    padding: 1.5vw;
+    h2{
+        font-size: 2vw;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 1vw;
+    }
+    .btn-info{
+        font-size: 1.4vw;
+        padding: 0.3vw 1vw;
+        color: white;
+        border-color: white;
+        background: rgb(35, 163, 177);
+    }
+    .information, .flash{
+        width: 32%;
+        padding: 3vw;
+    }
+    .profit{
+        padding: 3vw;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+}
+.guide{
+    padding: 0 1vw;
+    h2{
+        font-size: 2.4vw;
+        margin: 1vw 0;
+        span{
+            font-weight: normal;
+        }
+    }
+    p{
+        font-size: 1.4vw;
+        margin-bottom: 1vw;
+    }
+    .lien{
+        display: flex;
+        justify-content: space-around;
+        a{
+            text-decoration: none;
+            color: black;
+            position: relative;
+            .ville{
+                width: 23.5vw;
+                height: 12vw;
+                background: $bleu;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.2;
+                }
+                p{
+                    text-align: center;
+                    color: white;
+                    font-size: 2vw;
+                    position: absolute;
+                }
+                #villes{
+                    top: 1.3vw;
+                    left: 5vw;
+                }
+                #parc{
+                    top: 1vw;
+                    left: 6vw;
+                }
+                #peuple{
+                    top: 2vw;
+                    left: 5.5vw;
+                }
+                #tourisme{
+                    top: 3vw;
+                    left: 4.5vw;
+                }
+            }
+        }
+    }
+}
+.villes{
+    .ville{
+        overflow: hidden;
+    }
+}
+.photo{
+    background: rgba(242, 243, 245, 1);
+    padding: 2vw 0;
+    h2{
+        font-size: 2vw;
+        margin-bottom: 2vw;
+        text-align: center;
+        color: #182A80;
+    }
+    p{
+        font-size: 1.4vw;
+        text-align: center;
+        margin-bottom: 1vw;
+        color: #44494f;
+    }
+}
+.parent{
+    padding:1vw 3vw;
+    .slide-im{
+        .img{
+            img{
+                width: 18vw;
+                height: 10vw;
+                margin: 1vw 1vw;
+                border-radius: .5vw;
+            }
+        }
+    }
+}
+.contact{
+    h2, p, i, a{
+        color: $blanc;
+    }
+    background: $mainty;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+    h2{
+        font-size: 2vw;
+        text-decoration: underline;
+    }
+    p{
+        font-size: 1.4vw;
+        margin: .5vw;
+    }
+    i{
+        font-size: 1.4vw;
+    }
+    .place{
+        display: flex;
+        i{
+            margin-top: 1vw;
+        }
+    }
+    .num-phone, .impression{
+        display: flex;
+        align-items: center;
+    }
+    .num-phone{
+       i{
+        transform: rotate(90deg);
+       }
+    }
+    .mail{
+        a{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .input{
+        display: flex;
+        align-items: center;
+        #email{
+            font-size: 1vw;
+            padding: .5vw 5vw .5vw .5vw;
+        }
+        .btn-souscrire{
+            color: $blanc;
+            background: $vert;
+            border: none;
+            padding: .35vw;
+            font-size: 1.4vw;
+        }
+    }
+}
+@include footer;
+
+
+
+@media (max-width: 768px){
+    body{
+        overflow-x: hidden !important;
+    }
+    .contacts{
+        display: block;
+        #demande{
+            display: block;
+                width: 99%;
+                margin: 2vw 1vw;
+                h2{
+                    font-size: 3.5vw;
+                }
+                input{
+                    padding: 2vw .5vw ;
+                    margin: 2vw 0;
+                    border-radius: 1vw;
+                }
+                #nom{
+                    width: 48vw;
+                }
+                #prenom{
+                    width: 46vw;
+                }
+                #email{
+                    width: 70vw;
+                }
+                #number{
+                    width: 24vw;
+                }
+                p{
+                    font-size: 4vw;
+                    margin: 1vw 0;
+                }
+                #time{
+                    width: 70vw;
+                }
+                #jour{
+                    width: 40vw;
+                }
+                #adulte, #enfant, #bebe{
+                    width: 40vw;
+                    margin-right: 2vw;
+                }
+                ::placeholder{
+                    font-size: 3vw;
+                }
+                .capcha{
+                    width: 70vw;
+                    height: 15vw;
+                    box-shadow: 0 0 1px black;
+                    padding: 1vw;
+                    .check{
+                        display: flex;
+                        align-items: center;
+                        .carre{
+                            width: 4vw;
+                            height: 4vw;
+                            box-shadow: 0 0 1px black;
+                            margin-right: 1vw;
+                        }
+                    }
+                    .texte{
+                        float: right;
+                        p{
+                            font-size: 2vw;
+                            a{
+                                color: black;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+                .btn-envoyer{
+                    font-size: 3vw;
+                    padding: 1vw 2vw;
+                }
+        }
+        .plana{
+            margin-bottom: 2vw;
+            width: 95%;
+            height: 90vw;
+            .plane1{
+                margin-left: 43vw;
+                margin-bottom: 2vw;
+            }
+            h3{
+                font-size: 4vw;
+            }
+            p{
+                font-size: 3vw;
+                margin-bottom: 2vw;
+                color: $gris;
+            }
+            .btn-devis, #ou{
+                display: none;
+            }
+            .phone{
+                border: 1px solid black;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                margin-left: 28vw;
+                margin-bottom: 3vw;
+                i{
+                    font-size: 3vw;
+                }
+                p{
+                    font-size: 3vw;
+                }
+            }
+        }
+        #dmd{
+            display: none;
+        }
+        .carte{
+            iframe{
+                width: 100%;
+                height: 40vw;
+            }
+            a{
+                color: black;
+                .pleine{
+                    background: #aaa;
+                    padding-top: 1vw;
+                    border-bottom: 5px solid #000;
+                    p{
+                        text-align: center;
+                        font-size: 3vw;
+                    }
+                }
+            }
+            p{
+                font-size: 3vw;
+                margin: 3vw 0;
+            }
+            a{
+                text-decoration: none;
+                margin: 2vw 0;
+                .btn-cvg{
+                    font-size: 3vw;
+                    width: 95%;
+                    padding: 2vw 0;
+                    margin-left: 2.5vw;
+                }
+            }
+        }
+    }
+    .info{
+        display: block;
+        background: white;
+        .information, .profit, .flash{
+            width: 100%;
+            height: 30vw;
+            background: rgb(35, 163, 177);
+            margin: 1vw 0;
+            padding: 2vw;
+        }
+        h2{
+            font-size: 5vw;
+            margin-bottom: 3vw;
+        }
+        .btn-info{
+            font-size: 3vw;
+            padding: 1vw 2vw;
+            margin-bottom: 2vw;
+        }
+    }
+    .guide{
+        h2{
+            font-size: 6vw;
+        }
+        p{
+            font-size: 4vw;
+        }
+        .lien{
+            display: flex;
+            flex-wrap: wrap;
+            a{
+                margin: 2vw 1vw;
+                .ville{
+                    width: 45vw;
+                    height: 20vw;
+                    background: $bleu;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.2;
+                    }
+                    p{
+                        font-size: 3.5vw;
+                        position: absolute;
+                    }
+                    #villes{
+                        top: 1.3vw;
+                        left: 10vw;
+                    }
+                    #parc{
+                        top: 1vw;
+                        left: 11vw;
+                    }
+                    #peuple{
+                        top: 2vw;
+                        left: 10vw;
+                    }
+                    #tourisme{
+                        top: 3vw;
+                        left: 10.5vw;
+                    }
+                }
+            }
+        }
+    }
+    .photo{
+        h2, p{
+            font-size: 4vw;
+        }
+        .slide-img{
+            img{
+                width: 48vw;
+                height: 25vw;
+            }
+        }
+    }
+    .contact{
+        display: block;
+        text-align: center;
+        h2{
+            font-size: 4vw;
+            margin: 2vw 0;
+        }
+        p{
+            font-size: 3vw;
+            margin: 2vw 0;
+        }
+        i{
+            font-size: 3vw;
+            margin-right: 2vw;
+        }
+        .place{
+            display: block;
+            margin: 0 auto;
+        }
+        .mail, .num-phone, .impression{
+            margin: 2vw 30vw;
+        }
+    }
+    .parent{
+        padding: 0 5vw 0 6vw;
+        .slide-im{
+            .img{
+                img{
+                    width: 43vw !important;
+                    height: 25vw !important;
+                    margin: 1vw .5vw;
+                    border-radius: .5vw;
+                }
+            }
+        }
+    }
+    .newsletter{
+        margin-bottom: 2vw;
+        .input{
+            input{
+                width: 75vw;
+                height: 6vw;
+                padding: 1vw ;
+            }
+            ::placeholder{
+                font-size: 3vw;
+            }
+            .btn-souscrire{
+                font-size: 3.3vw;
+                padding: 1vw;
+            }
+        }
+    }
+    
+    footer{
+        p{
+            font-size: 4vw;
+        }
+    }
+}
+
+// hover :
+button:hover{
+    background: orangered !important;
+    color: white !important;
+    border-color: orangered !important;
+}
+.btn-head:hover{
+    background: $vert !important;
+    border-color: white !important;
+    transform: scale(1.2);
+    color: white !important;
+}
+// .ville:hover{
+//     background: none;
+//     opacity: 0.5;
+// }
+.ville:hover > img{
+    transform: scale(1.4);
+}
+
+.fa-google-plus-g:hover{
+    color: orange !important;
+}
+.fa-facebook-f:hover{
+    color: rgb(37, 149, 214) !important;
+}
+.fa-twitter:hover{
+    color: rgb(37, 149, 214) !important;
+}
+.fa-youtube:hover{
+    color: red !important;
+}

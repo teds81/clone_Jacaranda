@@ -1,0 +1,765 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .accueil {
+    display: block;
+  }
+  .accueil .texte {
+    width: 100%;
+  }
+  .accueil .texte h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .accueil .texte h2 br {
+    display: none;
+  }
+  .accueil .texte p {
+    font-size: 3vw !important;
+    text-align: center;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+    margin-left: 10vw;
+  }
+  .accueil .image {
+    display: none;
+  }
+}
+header {
+  width: 100%;
+  color: white;
+  background: rgb(11, 20, 62);
+  padding: 0.5vw 0;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+header .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .logo {
+  margin-left: 6vw;
+}
+header .head .logo img {
+  width: 9vw;
+}
+header .head .right {
+  display: flex;
+  align-items: center;
+}
+header .head .right .nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .right .nav ul li {
+  list-style: none;
+  font-size: 2vw;
+  text-transform: lowercase;
+  margin-left: 2vw;
+}
+header .head .right .nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+header .head .right .nav ul .btn-head {
+  margin: 1vw 5vw;
+  font-size: 1.4vw;
+  font-weight: 100;
+  background: rgb(11, 20, 62);
+  padding: 0.5vw;
+  border-color: rgb(254, 202, 8);
+}
+header .head .right .nav ul .btn-head a {
+  color: rgb(254, 202, 8);
+  text-decoration: none;
+}
+header .bars, header .close {
+  font-size: 10vw;
+  margin-right: 3vw;
+  display: none;
+}
+header .nav-click {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 14vw !important;
+  margin-top: -100%;
+  background: #444;
+  overflow: hidden;
+  transition: top 15s both;
+  z-index: 12;
+}
+header .nav-click ul {
+  padding: 1.5vw;
+}
+header .nav-click ul li {
+  padding: 1vw 0;
+  list-style: none;
+  font-size: 3vw;
+  text-transform: lowercase;
+}
+header .nav-click ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+}
+
+.right .nav ul .home:hover a {
+  border-bottom: 0.2vw solid rgb(113, 192, 67) !important;
+  color: rgb(113, 192, 67);
+}
+
+.nav-click ul .home:hover a {
+  color: rgb(113, 192, 67);
+}
+
+#blog {
+  border-bottom: 0.2vw solid rgb(113, 192, 67);
+}
+#blog a {
+  color: rgb(113, 192, 67);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-bottom: 2vw;
+  }
+  header .head .logo {
+    margin-left: 5vw;
+  }
+  header .head .logo img {
+    width: 25vw;
+  }
+  header .btn-head {
+    font-size: 1.4vw;
+  }
+  header .nav {
+    display: none;
+  }
+  header .bars {
+    display: block;
+    font-size: 8vw;
+    margin-right: 2vw;
+  }
+  header .close {
+    font-size: 8vw;
+  }
+  header .nav-click {
+    display: none;
+    position: absolute;
+    padding-top: 3vw;
+    background: rgb(11, 20, 62);
+  }
+  header .nav-click ul {
+    display: flex;
+    flex-direction: column !important;
+  }
+  header .nav-click ul li {
+    padding: 1vw 0;
+    list-style: none;
+    font-size: 6vw;
+    text-transform: lowercase;
+    border-bottom: 0.2vw solid white;
+  }
+  header .nav-click ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+  }
+  header .nav-click ul .btn-head {
+    margin: 20vw 5vw 1vw;
+    font-size: 5vw;
+    font-weight: 100;
+    background: rgb(11, 20, 62);
+    padding: 1vw 30vw;
+    border-color: rgb(254, 202, 8);
+  }
+  header .nav-click ul .btn-head a {
+    color: rgb(254, 202, 8);
+    text-decoration: none;
+  }
+  header .nav-click ul .btn-head:hover {
+    color: white;
+    background: rgb(113, 192, 67);
+    border-color: rgb(113, 192, 67);
+    transform: scale(1.1);
+  }
+  header .nav-click.active {
+    display: block !important;
+    margin-top: 0;
+    transition: 10s;
+    overflow: hidden;
+  }
+  header .nav-click.close {
+    display: none !important;
+    margin-top: 0;
+    transition: 3s;
+    overflow: visible;
+  }
+}
+a {
+  color: #555;
+}
+
+.recherche {
+  padding-top: 8vw;
+  position: relative;
+  padding-top: 8vw;
+}
+.recherche .search {
+  width: 25vw;
+  height: 2.5vw;
+  border-radius: 5vw;
+  float: right;
+  margin: 1vw 2vw;
+  padding: 0 3vw 0 1vw;
+  font-size: 1.2vw;
+}
+.recherche a {
+  color: black;
+}
+.recherche a .loop {
+  font-size: 1.5vw;
+  position: absolute;
+  right: 3vw;
+  top: 9.5vw;
+}
+
+.actus {
+  padding: 1vw;
+}
+.actus .liens {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5vw;
+  padding: 1vw;
+  border-bottom: 1px solid #000;
+}
+.actus .liens .avia, .actus .liens .avanana {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.actus .liens .avia a, .actus .liens .avanana a {
+  text-decoration: none;
+  border-left: 1px solid #000;
+  margin-right: 2.5vw;
+}
+.actus .liens .avia a p, .actus .liens .avanana a p {
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 1vw;
+}
+.actus .liens #aj {
+  border-left: none;
+}
+
+.actu {
+  display: flex;
+  padding: 1vw;
+}
+.actu .voir {
+  width: 100%;
+  height: 0.2vw;
+  margin-top: 3vw;
+  background: black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.actu .voir a {
+  margin-right: 7vw;
+  text-decoration: none;
+  color: white;
+}
+.actu .voir a span {
+  position: absolute;
+  top: -1.5vw;
+  text-align: center;
+  padding-top: 1vw;
+  font-size: 1vw;
+  width: 8vw;
+  height: 3vw;
+  background: #000;
+}
+.actu .voir #v1 {
+  margin-left: 10vw;
+}
+.actu .para {
+  margin: 1vw 0;
+}
+.actu .utile {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.actu .utile span {
+  border-left: 1px solid #000;
+  margin: 0 1vw;
+}
+.actu h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.4vw;
+  padding-bottom: 1vw;
+}
+.actu .jacaranda {
+  width: 30vw;
+  padding: 0 1vw;
+}
+.actu .jacaranda .img1 {
+  width: 28vw;
+  height: 2vw;
+  border: 1px solid black;
+}
+.actu .jacaranda h3 {
+  font-size: 1.7vw;
+  padding-bottom: 1vw;
+  border-bottom: 1px dashed #000;
+  margin-bottom: 1vw;
+}
+.actu .jacaranda a {
+  text-decoration: none;
+  width: 21vw;
+}
+.actu .jacaranda a .lien01 {
+  border-left: 10px solid #000;
+  padding-left: 1vw;
+  margin: 3vw 0;
+}
+.actu .jacaranda a .lien01 h4 {
+  font-size: 1vw;
+  font-weight: normal;
+  padding: 0;
+}
+.actu .jacaranda a .lien01 p {
+  text-transform: uppercase;
+  margin: 1vw 0;
+  font-size: 1.4vw;
+  color: black;
+  font-weight: bold;
+}
+.actu .mada {
+  width: 40vw;
+  padding: 0 1vw;
+}
+.actu .mada .img2 {
+  width: 38vw;
+  height: 2vw;
+  border: 1px solid black;
+}
+.actu .mada h3 {
+  font-size: 1.7vw;
+  padding-bottom: 1vw;
+  border-bottom: 1px dashed #000;
+  margin-bottom: 1vw;
+}
+.actu .mada a {
+  text-decoration: none;
+}
+.actu .mada a .lien01 {
+  border-left: 10px solid #000;
+  padding-left: 1vw;
+  margin: 3vw 0;
+}
+.actu .mada a .lien01 h3 {
+  margin: 1vw 0;
+  font-size: 1.4vw;
+  color: black;
+  font-weight: bold;
+}
+.actu .mada a .lien01 h4 {
+  font-size: 1vw;
+  font-weight: normal;
+}
+.actu .mada a .lien01 p {
+  font-size: 1.2vw;
+}
+.actu .temoin {
+  width: 30vw;
+  padding: 0 1vw;
+}
+.actu .temoin h2 {
+  border-bottom: 1px solid #000;
+}
+.actu .temoin a {
+  text-decoration: none;
+}
+.actu .temoin a .lien01 {
+  border-left: 10px solid #000;
+  padding-left: 1vw;
+  margin: 3vw 0;
+}
+.actu .temoin a .lien01 h3 {
+  margin: 1vw 0;
+  font-size: 1.4vw;
+  color: black;
+  font-weight: bold;
+}
+.actu .temoin a .lien01 h4 {
+  font-weight: normal;
+  font-size: 1vw;
+}
+.actu .temoin a .lien01 p {
+  font-size: 1.2vw;
+}
+.actu .temoin .vie {
+  margin-top: 3vw;
+}
+.actu .temoin .vie h2 {
+  border: none;
+}
+
+.info {
+  background: rgb(35, 163, 177);
+  margin: 2vw 1vw;
+  display: flex;
+  padding: 1.5vw;
+}
+.info h2 {
+  font-size: 2vw;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1vw;
+}
+.info .btn-info {
+  font-size: 1.4vw;
+  padding: 0.3vw 1vw;
+  color: white;
+  border-color: white;
+  background: rgb(35, 163, 177);
+}
+.info .information, .info .flash {
+  width: 32%;
+  padding: 3vw;
+}
+.info .profit {
+  padding: 3vw;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.contact {
+  background: #778;
+  padding: 2vw;
+  color: white;
+}
+.contact h2 {
+  font-size: 2.4vw;
+  text-align: center;
+  margin: 1vw;
+}
+.contact p {
+  font-size: 2vw;
+  text-align: center;
+  margin: 1vw;
+}
+.contact .btn-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .btn-flex .btn-cont {
+  padding: 0.5vw 3vw;
+  color: white;
+  background: greenyellow;
+  border-color: greenyellow;
+  margin-left: 10vw;
+  margin-top: 1vw;
+  font-size: 1.4vw;
+}
+.contact .btn-flex .btn-phone {
+  margin-top: 1vw;
+}
+.contact .btn-flex .btn-phone .btn-pro {
+  color: white;
+  background: #778;
+  padding: 0.5vw 1vw;
+  font-size: 1.4vw;
+  border-color: white;
+  margin-left: 1vw;
+}
+
+footer {
+  background: #182A80;
+  padding: 2vw;
+}
+footer p {
+  color: rgb(255, 255, 255);
+  font-size: 1.4vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .recherche {
+    position: relative;
+    padding-top: 18vw;
+  }
+  .recherche .search {
+    width: 80%;
+    height: 7vw;
+    float: none;
+    margin: 5vw 7vw 1vw;
+    padding: 0 3vw 0 1vw;
+    font-size: 1.2vw;
+  }
+  .recherche a {
+    color: black;
+  }
+  .recherche a .loop {
+    font-size: 5vw;
+    position: absolute;
+    right: 15vw;
+    top: 24vw;
+  }
+  .actus {
+    padding: 1vw;
+  }
+  .actus .liens {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .actus .liens .avia, .actus .liens .avanana {
+    display: block;
+  }
+  .actus .liens .avia a, .actus .liens .avanana a {
+    text-decoration: underline;
+    border-left: none;
+    margin-right: 2.5vw;
+  }
+  .actus .liens .avia a p, .actus .liens .avanana a p {
+    font-size: 3vw;
+  }
+  .actu {
+    display: block;
+  }
+  .actu h2 {
+    font-size: 4vw;
+    padding-bottom: 1vw;
+  }
+  .actu .voir {
+    width: 100%;
+    height: 0.2vw;
+    margin-top: 7vw;
+    background: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .actu .voir a {
+    margin-right: 7vw;
+    text-decoration: none;
+    color: white;
+  }
+  .actu .voir a span {
+    position: absolute;
+    top: -2vw;
+    text-align: center;
+    padding-top: 1vw;
+    font-size: 3vw;
+    width: 25vw;
+    height: 5vw;
+    background: #000;
+  }
+  .actu .voir #v1 {
+    margin-left: 10vw;
+  }
+  .actu .jacaranda {
+    width: 100%;
+    padding: 0 1vw;
+  }
+  .actu .jacaranda .img1 {
+    width: 100%;
+    height: 4vw;
+    border: 1px solid black;
+  }
+  .actu .jacaranda h3 {
+    font-size: 3vw;
+  }
+  .actu .jacaranda a {
+    text-decoration: none;
+    width: 21vw;
+  }
+  .actu .jacaranda a .lien01 {
+    border-left: 10px solid #000;
+    padding-left: 1vw;
+    margin: 3vw 0;
+  }
+  .actu .jacaranda a .lien01 h4 {
+    font-size: 3vw;
+    font-weight: normal;
+    padding: 0;
+  }
+  .actu .jacaranda a .lien01 p {
+    text-transform: uppercase;
+    margin: 1vw 0;
+    font-size: 3vw;
+    color: black;
+    font-weight: bold;
+  }
+  .actu .mada {
+    width: 100%;
+    padding: 0 1vw;
+    margin-top: 5vw;
+  }
+  .actu .mada .img2 {
+    width: 38vw;
+    height: 2vw;
+    border: 1px solid black;
+  }
+  .actu .mada h3 {
+    font-size: 4vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px dashed #000;
+    margin-bottom: 1vw;
+  }
+  .actu .mada a {
+    text-decoration: none;
+    margin-top: 3vw;
+  }
+  .actu .mada a .lien01 {
+    border-left: 10px solid #000;
+    padding-left: 1vw;
+    margin: 3vw 0;
+  }
+  .actu .mada a .lien01 h3 {
+    margin: 1vw 0;
+    font-size: 3vw;
+    color: black;
+    font-weight: bold;
+  }
+  .actu .mada a .lien01 h4 {
+    font-size: 3vw;
+    font-weight: normal;
+  }
+  .actu .mada a .lien01 p {
+    font-size: 3vw;
+  }
+  .actu .temoin {
+    width: 100%;
+    padding: 0 1vw;
+    margin-top: 5vw;
+  }
+  .actu .temoin h2 {
+    border-bottom: 1px solid #000;
+  }
+  .actu .temoin a {
+    text-decoration: none;
+  }
+  .actu .temoin a .lien01 {
+    border-left: 10px solid #000;
+    padding-left: 1vw;
+    margin: 3vw 0;
+  }
+  .actu .temoin a .lien01 h3 {
+    margin: 1vw 0;
+    font-size: 4vw;
+    color: black;
+    font-weight: bold;
+  }
+  .actu .temoin a .lien01 h4 {
+    font-weight: normal;
+    font-size: 3vw;
+  }
+  .actu .temoin a .lien01 p {
+    font-size: 3vw;
+  }
+  .actu .temoin .vie {
+    margin-top: 7vw;
+  }
+  .actu .temoin .vie h2 {
+    border: none;
+  }
+  .info {
+    display: block;
+    background: white;
+  }
+  .info .information, .info .profit, .info .flash {
+    width: 100%;
+    height: 30vw;
+    background: rgb(35, 163, 177);
+    margin: 1vw 0;
+    padding: 2vw;
+  }
+  .info h2 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+  .info .btn-info {
+    font-size: 3vw;
+    padding: 1vw 2vw;
+    margin-bottom: 2vw;
+  }
+  .contact h2 {
+    font-size: 4vw;
+  }
+  .contact p {
+    font-size: 3vw;
+  }
+  .contact .btn-flex {
+    display: block;
+  }
+  .contact .btn-flex .btn-cont {
+    font-size: 3vw;
+    display: block;
+    margin: 0 auto;
+  }
+  .contact .btn-flex .btn-cont br {
+    display: none;
+  }
+  .contact .btn-flex .btn-phone {
+    margin-left: 9vw;
+    margin-top: 2vw;
+  }
+  .contact .btn-flex .btn-phone .btn-pro {
+    font-size: 3vw;
+  }
+  .contact .btn-flex .btn-phone .btn-pro i {
+    font-size: 3vw;
+  }
+  footer p {
+    font-size: 4vw;
+  }
+}
+button:hover {
+  background: orangered !important;
+  color: white !important;
+  border-color: orangered !important;
+}
+
+.btn-head:hover {
+  background: rgb(113, 192, 67) !important;
+  border-color: white !important;
+  transform: scale(1.2);
+  color: white !important;
+}
+
+.fa-google-plus-g:hover {
+  color: orange !important;
+}
+
+.fa-facebook-f:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-twitter:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-youtube:hover {
+  color: red !important;
+}/*# sourceMappingURL=jBlog.css.map */
