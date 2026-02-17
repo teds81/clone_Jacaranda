@@ -5,49 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/jVoyage.css">
+    <link rel="stylesheet" href="../CSS/Voyage.css">
     <link rel="stylesheet" href="../CSS/aos.css">
     <link rel="stylesheet" href="../js/css/slick-theme.css"/>
     <link rel="stylesheet" href="../js/css/slick.css"/>
     <title>jacaranda voyage</title>
 </head>
 <body>
-    <header>
-        <div class="head">
-            <div class="logo">
-                <img src="../images/logo_jacaranda_white_bc_0.png" alt="">
-            </div>
-            <div class="right">
-                <nav class="nav">
-                    <ul>
-                        <li class="home" id="accueil"><a href="jacaranda.html">Accueil</a></li>
-                        <li class="home" id="agence"><a href="jAgence.html">L'agence</a></li>
-                        <li class="home" id="voyage"><a href="jacarandaVoyage.html">Nos voyages</a></li>
-                        <li class="home" id="guide"><a href="jGuide.html">Guide</a></li>
-                        <li class="home" id="blog"><a href="jBlog.html">Blog</a></li>
-                        <li class="home" id="contact"><a href="jContact.html">Contact/CGV</a></li>
-                        <button class="btn-head"><a href="">Réservez !</a></button>
-                    </ul>
-                </nav>
-                <div class="bars">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <div class="close">
-                    <i class="fa fa-times"></i>
-                </div>
-            </div>
-        </div>
-        <nav class="nav-click">
-            <ul>
-                <li class="home" id="accueil"><a href="jacaranda.html">Accueil</a></li>
-                <li class="home" id="agence"><a href="jAgence.html">L'agence</a></li>
-                <li class="home" id="voyage"><a href="jacarandaVoyage.html">Nos voyages</a></li>
-                <li class="home" id="guide"><a href="jGuide.html">Guide</a></li>
-                <li class="home" id="blog"><a href="jBlog.html">Blog</a></li>
-                <li class="home" id="contact"><a href="jContact.html">Contact/CGV</a></li>
-                <button class="btn-head"><a href="">Réservez !</a></button>
-            </ul>
-        </nav>
+  <header>
+    <div class="logo">
+      <img src="../images/logo_jacaranda_white_bc_0.png" alt="Jacaranda Madagascar">
+    </div>
+      <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <nav id="nav">
+          <a href="accueil.html">Accueil</a>
+          <a href="Agence.html">L’agence</a>
+          <a href="Voyage.html">Nos voyages</a>
+          <a href="Guide.html">Guide</a>
+          <a href="Blog.html">Blog</a>
+          <a href="Contact.html">Contact / CGV</a>
+
+          <button class="cta-btn">
+            résérvez
+          </button>
+      </nav>
     </header>
     <section class="flex">
         <h1><span>Nos voyages</span> à Madascar</h1>
@@ -130,33 +115,33 @@
         </div>
     </section>
     <section class="video">
-        <h2>Nos Vidéos</h2>
-        <div class="nos-video">
-            <div class="v-left">
-                <video src="../video/FILM DES 20 ANS DE JACARANDA.mp4" controls autoplay class="mp4 videoNgeza" id="20ans"></video>
-                <video src="../video/Circuit  Jaune  - La RN7 (Isalo) _ Jacaranda de Madagascar.mp4" id="rn7" controls autoplay class="videoNgeza invisible"></video>
-                <video src="../video/videoplayback.mp4" id="play" controls autoplay class="videoNgeza invisible"></video>
-            </div>
-            <div class="v-right">
-                <h2>jacaranda de madagascar</h2>
-                <div class="video-1">
-                    <video src="../video/FILM DES 20 ANS DE JACARANDA.mp4"  class="videoKely"></video>
-                    <i class="fa fa-play-circle icon1" style="color: white; font-size: 3vw;"></i>
-                    <p>FILM DE 20 ANS DE JACARANDA <br> <span>jacaranda de madagascar</span></p>
-                </div>
-                <div class="video-1">
-                    <video src="../video/Circuit  Jaune  - La RN7 (Isalo) _ Jacaranda de Madagascar.mp4"  class="videoKely"></video>
-                    <i class="fa fa-play-circle icon1" style="color: white; font-size: 3vw;"></i>
-                    <p>La EN7 de madagascar <br> <span>jacaranda de madagascar</span></p>
-                </div>
-                <div class="video-1">
-                    <video src="../video/videoplayback.mp4" class="videoKely">
-                    </video>
-                    <i class="fa fa-play-circle icon1" style="color: white; font-size: 3vw;"></i>
-                    <p>video playback <br> <span>jacaranda de madagascar</span></p>
-                </div>
-            </div>
-    </section>
+      <h2>Nos Vidéos</h2>
+      <div class="nos-video">
+          <div class="v-left">
+              <video src="../video/FILM DES 20 ANS DE JACARANDA.mp4" controls class="mp4 videoNgeza" id="20ans"></video>
+              <video src="../video/Circuit  Jaune  - La RN7 (Isalo) _ Jacaranda de Madagascar.mp4" id="rn7" controls class="videoNgeza invisible"></video>
+              <video src="../video/videoplayback.mp4" id="play" controls class="videoNgeza invisible"></video>
+          </div>
+          <div class="v-right">
+              <h2>jacaranda de madagascar</h2>
+              <div class="video-1">
+                  <video src="../video/FILM DES 20 ANS DE JACARANDA.mp4"  class="videoKely"></video>
+                  <i class="fa fa-play-circle icon1" style="color: white; font-size: 3vw;"></i>
+                  <p>FILM DE 20 ANS DE JACARANDA <br> <span>jacaranda de madagascar</span></p>
+              </div>
+              <div class="video-1">
+                  <video src="../video/Circuit  Jaune  - La RN7 (Isalo) _ Jacaranda de Madagascar.mp4"  class="videoKely"></video>
+                  <i class="fa fa-play-circle icon1" style="color: white; font-size: 3vw;"></i>
+                  <p>La EN7 de madagascar <br> <span>jacaranda de madagascar</span></p>
+              </div>
+              <div class="video-1">
+                  <video src="../video/videoplayback.mp4" class="videoKely"></video>
+                  <i class="fa fa-play-circle icon1" style="color: white; font-size: 3vw;"></i>
+                  <p>video playback <br> <span>jacaranda de madagascar</span></p>
+              </div>
+          </div>
+      </div>
+  </section>
     <section class="event">
         <div class="telecharger">
             <h2>Télécharger notre catalogue</h2>
@@ -276,6 +261,7 @@
     <script src="../js/js/slick.min.js"></script>
     <script src="../js/aos.js"></script>
     <script src="../js/js/jacaranda.js"></script>
-    <script src="../js/js/script.js"></script> 
+    <script src="../js/js/script.js"></script>
+    <script src="../js/hamburger.js"></script>
 </body>
 </html>

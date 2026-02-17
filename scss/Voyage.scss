@@ -2,22 +2,23 @@
 @import "library/variable.scss";
 @import "library/mixins.scss";
 
+@include header;
+@include footer;
+
 body{
     overflow-x: hidden
 }
-@include header;
 #voyage{
     border-bottom: .2vw solid $vert;
     a{
-        color: $vert; 
+        color: $vert;
     }
 }
-@include responsive;
 
 h1{
-    font-size: 4vw;
+    font-size: 2vw;
     font-weight: normal;
-    margin: 8vw 0 2vw 0;
+    margin: 2vw 0 2vw 0;
     span{
         font-weight: bold;
     }
@@ -47,7 +48,7 @@ h1{
                 margin-right: 2vw;
             }
             p{
-                font-size: 1.4vw;
+                font-size: 1.2vw;
                 font-weight: bold;
             }
         }
@@ -56,7 +57,7 @@ h1{
             color: white;
             a{
                 .next{
-                    font-size: 2vw;
+                    font-size: 1.6vw;
                     display: block;
                 }
             }
@@ -65,11 +66,11 @@ h1{
             color: white;
             background: #444;
             p{
-                font-size: 1.4vw;
+                font-size: 1.2vw;
             }
             a{
                 .next{
-                    font-size: 2vw;
+                    font-size: 1.6vw;
                     color: white;
                 }
             }
@@ -89,12 +90,12 @@ h1{
                     background: rgb(140, 59, 22);
                     height: 12vw;
                     p{
-                        font-size: 1vw;
+                        font-size: 1.2vw;
                         color: yellow;
                     }
                     color: white;
                     h2{
-                        font-size: 1.4vw;
+                        font-size: 1.2vw;
                         padding: 1vw 0;
                     }
                 }
@@ -110,6 +111,38 @@ h1{
         }
     }
 }
+
+.v-right .video-1 {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  &.active-mini {
+      border: 3px solid #71c043;
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+}
+
+
+.videoNgeza {
+  width: 100%;
+  height: auto;
+  max-height: 45vw;
+}
+.videoKely {
+  width: 100%;
+  height: auto;
+}
+
+
 .video{
     width: 100%;
     background: #1f1f1f;
@@ -123,15 +156,15 @@ h1{
         width: 100%;
         .v-left{
             width: 65vw;
-            height: 30vw; 
+            height: 30vw;
             video{
                 width: 100%;
-                height: 30vw; 
+                height: 30vw;
             }
             .invisible{display: none;}
 
             #rn7, #play{
-                
+
                 width: 100%;
                 height: 30vw;
             }
@@ -139,13 +172,13 @@ h1{
         .v-right{
             width: 30vw;
             height: 30vw;
-            padding: 1vw; 
+            padding: 1vw;
             border: 1px solid $gris;
             h2{
                 font-size: 1.4vw;
                 margin-bottom: 1vw;
                 color: white;
-                background: rgba(31, 31, 31, 0.1); 
+                background: rgba(31, 31, 31, 0.1);
             }
             .video-1{
                 display: flex;
@@ -160,10 +193,9 @@ h1{
                     width: 10vw;
                     height: 6vw;
                     margin-right: 1vw;
-                    position: relative;
                 }
                 p{
-                    font-size: 1.4vw;
+                    font-size: 1.2vw;
                     color: white;
                 }
                 span{
@@ -173,7 +205,7 @@ h1{
             }
         }
     }
-} 
+}
 .event{
     display: flex;
     margin: 4vw 2vw;
@@ -185,15 +217,15 @@ h1{
         padding: 2vw 4vw;
         border: 1px solid black;
         h2{
-            font-size: 2vw;
+            font-size: 1.6vw;
             margin: 1vw  0;
         }
         p{
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             margin-bottom: 1vw;
         }
         .btn-download{
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             color: white;
             background: rgba(113, 192, 67, 1);
             padding: 1vw 2vw;
@@ -206,13 +238,13 @@ h1{
         height: 15vw;
         padding: 4vw;
         h2{
-            font-size: 2.4vw;
+            font-size: 2vw;
             margin-bottom: 2vw;
             color: white;
         }
         .btn-profiter{
             color: white;
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             padding: 1vw 2vw;
             border-color: white;
             background: rgba(0, 154, 182, 1);
@@ -229,7 +261,7 @@ h1{
         color: #182A80;
     }
     p{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         text-align: center;
         margin-bottom: 1vw;
         color: #44494f;
@@ -249,60 +281,60 @@ h1{
     }
 }
 .contact{
-    h2, p, i, a{
-        color: $blanc;
-    }
-    background: $mainty;
-    display: flex;
-    justify-content: space-between;
-    padding: 2vw;
-    h2{
-        font-size: 2vw;
-        text-decoration: underline;
-    }
-    p{
-        font-size: 1.4vw;
-        margin: .5vw;
-    }
-    i{
-        font-size: 1.4vw;
-    }
-    .place{
-        display: flex;
-        i{
-            margin-top: 1vw;
-        }
-    }
-    .num-phone, .impression{
-        display: flex;
-        align-items: center;
-    }
-    .num-phone{
-       i{
-        transform: rotate(90deg);
-       }
-    }
-    .mail{
-        a{
-            display: flex;
-            align-items: center;
-        }
-    }
-    .input{
-        display: flex;
-        align-items: center;
-        #email{
-            font-size: 1vw;
-            padding: .5vw 5vw .5vw .5vw;
-        }
-        .btn-souscrire{
-            color: $blanc;
-            background: $vert;
-            border: none;
-            padding: .35vw;
-            font-size: 1.4vw;
-        }
-    }
+  h2, p, i, a{
+      color: $blanc;
+  }
+  background: $mainty;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+  h2{
+      font-size: 1.6vw;
+      text-decoration: underline;
+  }
+  p{
+      font-size: 1.2vw;
+      margin: .5vw;
+  }
+  i{
+      font-size: 1.2vw;
+  }
+  .place{
+      display: flex;
+      i{
+          margin-top: 1vw;
+      }
+  }
+  .num-phone, .impression{
+      display: flex;
+      align-items: center;
+  }
+  .num-phone{
+     i{
+      transform: rotate(90deg);
+     }
+  }
+  .mail{
+      a{
+          display: flex;
+          align-items: center;
+      }
+  }
+  .input{
+      display: flex;
+      align-items: center;
+      #email{
+          font-size: 1vw;
+          padding: .5vw 5vw .5vw .5vw;
+      }
+      .btn-souscrire{
+          color: $blanc;
+          background: $vert;
+          border: none;
+          padding: .35vw;
+          font-size: 1.4vw;
+      }
+  }
 }
 @include footer;
 
@@ -312,7 +344,7 @@ h1{
     .flex{
         width: 100%;
         h1{
-            margin: 18vw 2vw 2vw 2vw;
+            margin: 2vw 2vw 2vw 2vw;
             font-size: 4vw;
         }
         .voyage{
@@ -484,7 +516,7 @@ button:hover{
     color: white !important;
     border-color: orangered !important;
 }
-    
+
 .btn-head:hover{
     background: $vert !important;
     border-color: white !important;

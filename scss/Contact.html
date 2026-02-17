@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/jContact.css">
+    <link rel="stylesheet" href="../CSS/Contact.css">
     <link rel="stylesheet" href="../scss/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../js/css/slick.css"/>
     <link rel="stylesheet" href="../CSS/aos.css">
@@ -12,43 +12,29 @@
     <title>contact</title>
 </head>
 <body>
-    <header>
-        <div class="head">
-            <div class="logo">
-                <img src="../images/logo_jacaranda_white_bc_0.png" alt="">
-            </div>
-            <div class="right">
-                <nav class="nav">
-                    <ul>
-                        <li class="home" id="accueil"><a href="jacaranda.html">Accueil</a></li>
-                        <li class="home" id="agence"><a href="jAgence.html">L'agence</a></li>
-                        <li class="home" id="voyage"><a href="jacarandaVoyage.html">Nos voyages</a></li>
-                        <li class="home" id="guide"><a href="jGuide.html">Guide</a></li>
-                        <li class="home" id="blog"><a href="jBlog.html">Blog</a></li>
-                        <li class="home" id="contact"><a href="jContact.html">Contact/CGV</a></li>
-                        <a href=""><button class="btn-head">Réservez !</button></a>
-                    </ul>
-                </nav>
-                <div class="bars">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <div class="close">
-                    <i class="fa fa-times"></i>
-                </div>
-            </div>
-        </div>
-        <nav class="nav-click">
-            <ul>
-                <li class="home" id="accueil"><a href="jacaranda.html">Accueil</a></li>
-                <li class="home" id="agence"><a href="jAgence.html">L'agence</a></li>
-                <li class="home" id="voyage"><a href="jacarandaVoyage.html">Nos voyages</a></li>
-                <li class="home" id="guide"><a href="jGuide.html">Guide</a></li>
-                <li class="home" id="blog"><a href="jBlog.html">Blog</a></li>
-                <li class="home" id="contact"><a href="jContact.html">Contact/CGV</a></li>
-                <button class="btn-head"><a href="">Réservez !</a></button>
-            </ul>
-        </nav>
+  <header>
+    <div class="logo">
+      <img src="../images/logo_jacaranda_white_bc_0.png" alt="Jacaranda Madagascar">
+    </div>
+      <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <nav id="nav">
+          <a href="accueil.html">Accueil</a>
+          <a href="Agence.html">L’agence</a>
+          <a href="Voyage.html">Nos voyages</a>
+          <a href="Guide.html">Guide</a>
+          <a href="Blog.html">Blog</a>
+          <a href="Contact.html">Contact / CGV</a>
+
+          <button class="cta-btn">
+            résérvez
+          </button>
+      </nav>
     </header>
+
     <section class="contacts">
         <div class="demande" id="demande">
             <h2>Envoyez-nous votre demande</h2>
@@ -103,7 +89,7 @@
             <p>  Métro ligne 12 : Trinité</p>
             <p> Ligne 7, 9 : Chaussée d’Antin</p>
             <p> Ligne 3, 12, 13, 14 : Saint-Lazare</p>
-            
+
         </div>
         <div class="demande" id="dmd">
             <h2>Envoyez-nous votre demande</h2>
@@ -172,7 +158,7 @@
             <a href="" class="villes">
                 <div class="ville">
                     <img src="../images/contact/eden_lodge.png" alt="">
-                    <p id="villes">Les villes,<br> 
+                    <p id="villes">Les villes,<br>
                         régions et lieux <br>
                          de la Grande <br> Île
                     </p>
@@ -318,5 +304,6 @@
     <script src="../js/aos.js"></script>
     <script src="../js/js/jacaranda.js"></script>
     <script src="../js/js/script.js"></script>
+    <script src="../js/hamburger.js"></script>
 </body>
 </html>

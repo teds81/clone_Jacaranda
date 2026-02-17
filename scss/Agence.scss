@@ -2,16 +2,14 @@
 @import "library/variable.scss";
 @import "library/mixins.scss";
 
-@include header ;
+@include header;
 #agence{
     border-bottom: .2vw solid $vert;
     a{
         color: $vert;
     }
 }
-@include responsive;
 .edit{
-    margin-top: 10vw;
     padding-top: 3vw;
     display: flex;
     width: 100%;
@@ -21,7 +19,7 @@
         background: $bleu;
         p{
             margin-top: 20vw;
-            font-size: 3vw;
+            font-size: 2vw;
             text-align: center;
         }
     }
@@ -29,10 +27,10 @@
         width: 60vw;
         text-align: center;
         p{
-            font-size: 1.4vw;
+            font-size: 1.2vw;
         }
         h2{
-            font-size: 2vw;
+            font-size: 1.6vw;
         }
     }
     .image{
@@ -61,7 +59,7 @@
     margin: 2vw 0;
     position: relative;
     h2{
-        font-size: 3vw;
+        font-size: 2vw;
         margin: 2vw 0;
         span{
             font-weight: normal;
@@ -69,7 +67,7 @@
     }
     .images{
         a{
-            position: relative; 
+            position: relative;
             img{
                 width: 50vw;
                 height: 30vw;
@@ -86,7 +84,7 @@
             background: $blanc;
             box-shadow: 0 0 .2vw black;
             p{
-                font-size: 1.4vw;
+                font-size: 1.2vw;
                 margin-left: 3vw;
             }
         }
@@ -105,7 +103,7 @@
 .raison{
     margin-top: 5vw;
     h2{
-        font-size: 3vw;
+        font-size: 2vw;
         span{
             font-weight: normal;
         }
@@ -133,13 +131,13 @@
                     display: flex;
                     align-items: center;
                     h3{
-                        font-size: 4vw;
+                        font-size: 2.5vw;
                         border-right: 1px solid black;
                         padding-right: 1vw;
                         margin-right: 1vw;
                     }
                     p{
-                        font-size: 1.4vw;
+                        font-size: 1.2vw;
                     }
                 }
             }
@@ -152,13 +150,13 @@
     display: flex;
     padding: 1.5vw;
     h2{
-        font-size: 2vw;
+        font-size: 1.6vw;
         text-transform: uppercase;
         color: white;
         margin-bottom: 1vw;
     }
     .btn-info{
-        font-size: 1.4vw;
+        font-size: 1.6vw;
         padding: 0.3vw 1vw;
         color: white;
         border-color: white;
@@ -179,12 +177,12 @@
     padding: 2vw;
     color: white;
     h2{
-        font-size: 2.4vw;
+        font-size: 2vw;
         text-align: center;
         margin: 1vw;
     }
     p{
-        font-size: 2vw;
+        font-size: 1.6vw;
         text-align: center;
         margin: 1vw;
     }
@@ -199,7 +197,7 @@
             border-color: greenyellow;
             margin-left: 10vw;
             margin-top: 1vw;
-            font-size: 1.4vw;
+            font-size: 1.2vw;
         }
         .btn-phone{
             margin-top: 1vw;
@@ -207,7 +205,7 @@
                 color: white;
                 background: #778;
                 padding: .5vw 1vw;
-                font-size: 1.4vw;
+                font-size: 1.2vw;
                 border-color: white;
                 margin-left: 1vw;
             }
@@ -221,7 +219,7 @@
     .edit{
         display: block;
         margin-top: 3vw ;
-        padding-top: 15vw;
+        padding-top: 2vw;
         .edito{
             width: 95%;
             margin: 2vw;

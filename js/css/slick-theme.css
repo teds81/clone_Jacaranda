@@ -43,9 +43,9 @@
     background: transparent;
 }
 .slick-prev{
-    left: -2vw !important;
+    left: -2.5vw !important;
     z-index: 5;
-    top: 6vw;
+    top: 50%;
 }
 /* Arrows */
 .slick-prev:hover,

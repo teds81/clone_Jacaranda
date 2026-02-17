@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .accueil {
+    display: block;
+  }
+  .accueil .texte {
+    width: 100%;
+  }
+  .accueil .texte h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .accueil .texte h2 br {
+    display: none;
+  }
+  .accueil .texte p {
+    font-size: 3vw !important;
+    text-align: center;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+    margin-left: 10vw;
+  }
+  .accueil .image {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: color 0.25s ease;
+  font-size: 1.2vw;
+}
+
+header {
+  width: 100%;
+  background: rgb(11, 20, 62);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  padding: 0 6vw;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+header .logo {
+  position: relative;
+  z-index: 1100;
+}
+header .logo img {
+  width: clamp(80px, 9vw, 140px);
+  display: block;
+}
+header nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+header nav a {
+  font-weight: 500;
+  position: relative;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgb(113, 192, 67);
+  transition: width 0.3s ease;
+}
+header nav a:hover, header nav a.active {
+  color: rgb(113, 192, 67);
+}
+header nav a:hover::after, header nav a.active::after {
+  width: 100%;
+}
+header .cta-btn {
+  background: rgb(254, 202, 8);
+  color: rgb(11, 20, 62);
+  font-size: 1vw;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header .cta-btn:hover {
+  background: rgb(113, 192, 67);
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+header .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+header .hamburger span {
+  width: 28px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+header .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+header .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+  a {
+    font-size: 5vw;
+  }
+  header {
+    padding: 0 5vw;
+  }
+  header .hamburger {
+    display: flex;
+  }
+  header .cta-btn {
+    font-size: 4vw;
+    padding: 12px 24px;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(11, 20, 62);
+    z-index: 1050;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  }
+  header nav.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  header nav a {
+    font-weight: 500;
+  }
+  header nav a::after {
+    bottom: -8px;
+  }
+}
+#guide {
+  border-bottom: 0.2vw solid rgb(113, 192, 67);
+}
+#guide a {
+  color: rgb(113, 192, 67);
+}
+
+.titre {
+  width: 90vw;
+  display: flex;
+  margin: 2vw;
+}
+.titre .left {
+  width: 35vw;
+}
+.titre .left .ttre h1 {
+  font-size: 2vw;
+  margin-bottom: 2vw;
+}
+.titre .left .ttre h1 span {
+  font-weight: normal;
+}
+.titre .left .ttre p {
+  font-size: 1.2vw;
+}
+.titre .left .lettre {
+  padding: 1vw;
+}
+.titre .left .lettre a {
+  text-decoration: none;
+}
+.titre .left .lettre a .noire {
+  width: 100%;
+  height: 4vw;
+  padding: 1vw;
+  margin-bottom: 0.2vw;
+  background: rgb(46, 46, 46);
+  color: rgb(255, 255, 255);
+}
+.titre .left .lettre a .noire p {
+  font-size: 1.2vw;
+}
+.titre .left .lettre a .noire p span {
+  float: right;
+}
+.titre .right {
+  width: 60vw;
+  margin-right: 1vw;
+}
+.titre .right .p1 {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.5vw;
+  margin-left: 2vw;
+}
+.titre .right .p1 p {
+  font-size: 1.4vw;
+}
+.titre .right .carte {
+  width: 30vw;
+  margin: 1vw 2vw 1vw 20vw;
+}
+.titre .right .carte iframe {
+  width: 30vw;
+  height: 25vw;
+}
+.titre .right .carte a {
+  color: black;
+}
+.titre .right .carte a .pleine {
+  background: #aaa;
+  padding-top: 0.7vw;
+  border-bottom: 5px solid #000;
+}
+.titre .right .carte a .pleine p {
+  text-align: center;
+}
+.titre .right .carte p {
+  font-size: 1.4vw;
+  margin: 1vw 0;
+}
+.titre .right .carte a {
+  text-decoration: none;
+}
+.titre .right .carte a .btn-cvg {
+  font-size: 1.4vw;
+  padding: 0.7vw 2vw;
+}
+
+.preparation {
+  margin-top: 2vw;
+  padding: 1vw;
+}
+.preparation h2 {
+  font-size: 2vw;
+  margin-bottom: 2vw;
+}
+.preparation p {
+  font-size: 1.2vw;
+}
+
+.circuit .titres {
+  display: flex;
+  margin: 0 1vw 2vw;
+  align-items: center;
+}
+.circuit .titres h3 {
+  font-size: 1.6vw;
+}
+.circuit .titres .tirer {
+  width: 57vw;
+  height: 2px;
+  background: #000;
+  margin-left: 1vw;
+}
+.circuit .circuits {
+  margin: 1vw;
+  width: 35%;
+  display: flex;
+}
+.circuit .circuits .ligne a {
+  text-decoration: none;
+}
+.circuit .circuits .ligne a .gris {
+  width: 25vw;
+  height: 3vw;
+  margin-bottom: 0.5vw;
+  color: rgba(0, 0, 0, 0.5);
+  background: whitesmoke;
+  padding: 1vw;
+}
+.circuit .circuits .ligne a .gris p {
+  font-size: 1.4vw;
+}
+.circuit .circuits .ligne a #all {
+  color: rgb(255, 255, 255);
+  background: rgb(119, 132, 158);
+}
+.circuit .circuits a {
+  text-decoration: none;
+}
+.circuit .circuits a .column {
+  width: 4vw;
+  height: 17vw;
+  margin-left: 1vw;
+  background: rgb(139, 68, 40);
+  padding: 1vw 1.4vw;
+}
+.circuit .circuits a .column p {
+  font-size: 2.5vw;
+  color: rgb(254, 202, 8);
+}
+
+footer {
+  background: rgb(11, 20, 62);
+  padding: 2vw;
+}
+footer p {
+  color: rgb(255, 255, 255);
+  font-size: 1.4vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .titre {
+    display: block;
+    width: 95vw;
+  }
+  .titre .left {
+    width: 100%;
+  }
+  .titre .left .ttre h1 {
+    font-size: 5vw;
+    margin: 3vw 2vw;
+  }
+  .titre .left .ttre h1 br {
+    display: none;
+  }
+  .titre .left .ttre p {
+    font-size: 3vw;
+    margin: 2vw;
+  }
+  .titre .left .lettre a .noire {
+    width: 98%;
+    height: 7vw;
+    margin-right: 2vw;
+  }
+  .titre .left .lettre a .noire p {
+    font-size: 3vw;
+  }
+  .titre .right {
+    width: 90%;
+  }
+  .titre .right .p1 {
+    margin: 2vw;
+  }
+  .titre .right .p1 p {
+    font-size: 3vw;
+  }
+  .titre .right .carte {
+    width: 90vw;
+    margin: 0;
+  }
+  .titre .right .carte iframe {
+    width: 100%;
+    height: 40vw;
+  }
+  .titre .right .carte a {
+    color: black;
+  }
+  .titre .right .carte a .pleine {
+    background: #aaa;
+    padding-top: 1vw;
+    border-bottom: 5px solid #000;
+  }
+  .titre .right .carte a .pleine p {
+    text-align: center;
+    font-size: 3vw;
+  }
+  .titre .right .carte p {
+    font-size: 3vw;
+    margin: 3vw 0;
+  }
+  .titre .right .carte a {
+    text-decoration: none;
+    margin: 2vw 0;
+  }
+  .titre .right .carte a .btn-cvg {
+    font-size: 3vw;
+    width: 95%;
+    padding: 2vw 0;
+    margin-left: 2.5vw;
+  }
+  .preparation h2 {
+    font-size: 4vw;
+  }
+  .preparation p {
+    font-size: 3vw;
+  }
+  .circuit .titres {
+    display: block;
+    width: 90%;
+    margin: 2vw 2vw 2vw 8vw;
+  }
+  .circuit .titres h3 {
+    font-size: 3vw;
+    padding-bottom: 1vw;
+  }
+  .circuit .titres .tirer {
+    margin: 0;
+  }
+  .circuit .circuits {
+    width: 95%;
+    display: block;
+  }
+  .circuit .circuits .ligne {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .circuit .circuits .ligne a .gris {
+    width: 40vw;
+    height: 7vw;
+    margin: 1vw 2.5vw;
+  }
+  .circuit .circuits .ligne a .gris p {
+    font-size: 3vw;
+  }
+  .circuit .circuits .ligne a #sud {
+    margin-left: 25vw;
+  }
+  .circuit .circuits a .column {
+    width: 10vw;
+    height: 10vw;
+    padding: 3.5vw 4vw;
+  }
+  .circuit .circuits a .column p {
+    font-size: 4vw;
+  }
+  footer p {
+    font-size: 4vw;
+  }
+}
+button:hover {
+  background: orangered !important;
+  color: white !important;
+  border-color: orangered !important;
+}
+
+.btn-head:hover {
+  background: rgb(113, 192, 67) !important;
+  border-color: white !important;
+  transform: scale(1.2);
+  color: white !important;
+}
+
+.fa-google-plus-g:hover {
+  color: orange !important;
+}
+
+.fa-facebook-f:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-twitter:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-youtube:hover {
+  color: red !important;
+}/*# sourceMappingURL=Guide.css.map */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -32,97 +33,150 @@
     display: none;
   }
 }
-header {
-  width: 100%;
-  color: white;
-  background: rgb(11, 20, 62);
-  padding: 0.5vw 0;
-  position: fixed;
-  top: 0;
-  z-index: 5;
-}
-header .head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .head .logo {
-  margin-left: 6vw;
-}
-header .head .logo img {
-  width: 9vw;
-}
-header .head .right {
-  display: flex;
-  align-items: center;
-}
-header .head .right .nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .head .right .nav ul li {
-  list-style: none;
-  font-size: 2vw;
-  text-transform: lowercase;
-  margin-left: 2vw;
-}
-header .head .right .nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 200;
-}
-header .head .right .nav ul .btn-head {
-  margin: 1vw 5vw;
-  font-size: 1.4vw;
-  font-weight: 100;
-  background: rgb(11, 20, 62);
-  padding: 0.5vw;
-  border-color: rgb(254, 202, 8);
-}
-header .head .right .nav ul .btn-head a {
-  color: rgb(254, 202, 8);
-  text-decoration: none;
-}
-header .bars, header .close {
-  font-size: 10vw;
-  margin-right: 3vw;
-  display: none;
-}
-header .nav-click {
-  display: none;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 14vw !important;
-  margin-top: -100%;
-  background: #444;
-  overflow: hidden;
-  transition: top 15s both;
-  z-index: 12;
-}
-header .nav-click ul {
-  padding: 1.5vw;
-}
-header .nav-click ul li {
-  padding: 1vw 0;
-  list-style: none;
-  font-size: 3vw;
-  text-transform: lowercase;
-}
-header .nav-click ul li a {
+a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-weight: 200;
+  transition: color 0.25s ease;
+  font-size: 1.2vw;
 }
 
-.right .nav ul .home:hover a {
-  border-bottom: 0.2vw solid rgb(113, 192, 67) !important;
+header {
+  width: 100%;
+  background: rgb(11, 20, 62);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  padding: 0 6vw;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+header .logo {
+  position: relative;
+  z-index: 1100;
+}
+header .logo img {
+  width: clamp(80px, 9vw, 140px);
+  display: block;
+}
+header nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+header nav a {
+  font-weight: 500;
+  position: relative;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgb(113, 192, 67);
+  transition: width 0.3s ease;
+}
+header nav a:hover, header nav a.active {
   color: rgb(113, 192, 67);
 }
+header nav a:hover::after, header nav a.active::after {
+  width: 100%;
+}
+header .cta-btn {
+  background: rgb(254, 202, 8);
+  color: rgb(11, 20, 62);
+  font-size: 1vw;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header .cta-btn:hover {
+  background: rgb(113, 192, 67);
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+header .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+header .hamburger span {
+  width: 28px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+header .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+header .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
 
-.nav-click ul .home:hover a {
-  color: rgb(113, 192, 67);
+@media (max-width: 768px) {
+  a {
+    font-size: 5vw;
+  }
+  header {
+    padding: 0 5vw;
+  }
+  header .hamburger {
+    display: flex;
+  }
+  header .cta-btn {
+    font-size: 4vw;
+    padding: 12px 24px;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(11, 20, 62);
+    z-index: 1050;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  }
+  header nav.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  header nav a {
+    font-weight: 500;
+  }
+  header nav a::after {
+    bottom: -8px;
+  }
+}
+footer {
+  background: rgb(11, 20, 62);
+  padding: 2vw;
+}
+footer p {
+  color: rgb(255, 255, 255);
+  font-size: 1.4vw;
+  text-align: center;
 }
 
 #accueil {
@@ -132,83 +186,6 @@ header .nav-click ul li a {
   color: rgb(113, 192, 67);
 }
 
-@media (max-width: 768px) {
-  header {
-    padding-bottom: 2vw;
-  }
-  header .head .logo {
-    margin-left: 5vw;
-  }
-  header .head .logo img {
-    width: 25vw;
-  }
-  header .btn-head {
-    font-size: 1.4vw;
-  }
-  header .nav {
-    display: none;
-  }
-  header .bars {
-    display: block;
-    font-size: 8vw;
-    margin-right: 2vw;
-  }
-  header .close {
-    font-size: 8vw;
-  }
-  header .nav-click {
-    display: none;
-    position: absolute;
-    padding-top: 3vw;
-    background: rgb(11, 20, 62);
-  }
-  header .nav-click ul {
-    display: flex;
-    flex-direction: column !important;
-  }
-  header .nav-click ul li {
-    padding: 1vw 0;
-    list-style: none;
-    font-size: 6vw;
-    text-transform: lowercase;
-    border-bottom: 0.2vw solid white;
-  }
-  header .nav-click ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 200;
-  }
-  header .nav-click ul .btn-head {
-    margin: 20vw 5vw 1vw;
-    font-size: 5vw;
-    font-weight: 100;
-    background: rgb(11, 20, 62);
-    padding: 1vw 30vw;
-    border-color: rgb(254, 202, 8);
-  }
-  header .nav-click ul .btn-head a {
-    color: rgb(254, 202, 8);
-    text-decoration: none;
-  }
-  header .nav-click ul .btn-head:hover {
-    color: white;
-    background: rgb(113, 192, 67);
-    border-color: rgb(113, 192, 67);
-    transform: scale(1.1);
-  }
-  header .nav-click.active {
-    display: block !important;
-    margin-top: 0;
-    transition: 10s;
-    overflow: hidden;
-  }
-  header .nav-click.close {
-    display: none !important;
-    margin-top: 0;
-    transition: 3s;
-    overflow: visible;
-  }
-}
 .accueil {
   display: flex;
   justify-content: space-between;
@@ -219,7 +196,7 @@ header .nav-click ul li a {
   margin-top: 3vw;
 }
 .accueil .texte h2 {
-  font-size: 4vw;
+  font-size: 3vw;
   font-weight: normal;
   margin-left: 4vw;
 }
@@ -227,60 +204,41 @@ header .nav-click ul li a {
   color: rgb(113, 192, 67);
 }
 .accueil .texte p {
-  font-size: 2vw;
+  font-size: 1.4vw;
   margin: 1vw 1vw 4vw;
 }
 .accueil .texte .btn-informe {
   background: #182A80;
   color: white;
-  font-size: 2vw;
-  padding: 2vw 5vw;
+  font-size: 1.4vw;
+  padding: 1vw 3vw;
   border-radius: 1vw;
   margin-left: 4vw;
 }
 .accueil .image {
   width: 45vw;
-  height: 45vw;
+  height: 30vw;
+  border-radius: 20px;
   position: relative;
 }
-.accueil .image #one, .accueil .image #two, .accueil .image #three, .accueil .image #four {
+.accueil .image div {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .accueil .image img {
   width: 100%;
   height: 100%;
-}
-.accueil .image .prev, .accueil .image .next {
-  font-size: 2.5em;
-  border: 0.2vw solid rgb(255, 255, 255);
-  border-radius: 50%;
-  padding: 0.5vw 0.9vw;
-  color: white;
-  text-shadow: 0 0 10px black;
-  position: absolute;
-  top: calc(50% - 20px);
-}
-.accueil .image .prev {
-  left: 35px;
-}
-.accueil .image .next {
-  right: 35px;
-}
-.accueil .image #one, .accueil .image #two, .accueil .image #three {
-  opacity: 0;
-  visibility: hidden;
-}
-.accueil .image #four:target, .accueil .image #one:target, .accueil .image #two:target, .accueil .image #three:target {
-  visibility: visible;
-  opacity: 1;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 .information {
   display: flex;
+  margin-top: 3.5vw;
 }
 .information .demande {
   width: 25vw;
@@ -365,99 +323,110 @@ header .nav-click ul li a {
 .information .reservation h2 {
   font-size: 2vw;
   color: #182A80;
+  margin-bottom: 1vw;
 }
-.information .reservation a {
-  color: white;
+.information .reservation .buttons-season {
+  margin-bottom: 2vw;
 }
-.information .reservation a button {
+.information .reservation .buttons-season a {
+  text-decoration: none;
+}
+.information .reservation .buttons-season a button {
   background: rgb(113, 192, 67);
-  margin: 1vw 0;
+  margin-right: 1vw;
   font-size: 1vw;
   padding: 1vw 3vw;
   border: none;
   color: white;
+  cursor: pointer;
 }
-.information .reservation a .btn-paque {
+.information .reservation .buttons-season a .btn-paque {
   color: rgb(119, 132, 158);
   background: rgb(242, 243, 245);
-  margin-left: 2vw;
 }
-.information .reservation .tete {
-  width: 65vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.information .reservation table.vols-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.information .reservation table.vols-table thead {
   background: rgb(113, 192, 67);
   color: white;
+}
+.information .reservation table.vols-table thead th {
   padding: 1vw;
-  padding-right: 16vw;
-}
-.information .reservation .tete h4 {
   font-size: 1vw;
+  vertical-align: bottom;
 }
-.information .reservation .tete h4 span {
-  font-size: 1vw;
+.information .reservation table.vols-table thead th span {
+  font-size: 0.8vw;
+  display: block;
 }
-.information .reservation .tete #retour {
-  margin-left: 2vw;
-}
-.information .reservation .tete #companie {
-  margin-right: 1vw;
-}
-.information .reservation .date {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5vw 2vw 0.5vw 0;
-  color: rgb(119, 132, 158);
-  padding-left: 1vw;
-  padding-right: 5vw;
-}
-.information .reservation .date p {
-  font-size: 1vw;
-}
-.information .reservation .date .dates {
-  margin-left: 1vw;
-}
-.information .reservation .date .air {
-  margin-left: 5vw;
-}
-.information .reservation .date .btn-reserver {
-  padding: 0.5vw 1vw;
+.information .reservation table.vols-table tbody td {
+  padding: 0.8vw 1vw;
   font-size: 1vw;
   color: rgb(119, 132, 158);
+  vertical-align: top;
 }
-.information .reservation .gris {
+.information .reservation table.vols-table tbody tr.gris {
   background: rgb(242, 243, 245);
 }
-.information .reservation .Corsair .air {
-  margin-right: 1.4vw;
+.information .reservation table.vols-table tbody .btn-reserver {
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
+  background: rgb(119, 132, 158);
+  border: none;
+  cursor: pointer;
+  color: white;
 }
-.information .reservation .Kenya .air {
-  margin-right: -2vw;
+.information .reservation table.vols-table tr {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
 }
-.information .reservation .Ethiopian .air {
-  margin-right: -3vw;
+.information .reservation .btn-bottom {
+  margin-top: 2vw;
 }
-.information .reservation .Turkish .air {
-  margin-right: -2vw;
+.information .reservation .btn-bottom a {
+  text-decoration: none;
 }
-.information .reservation .btn a button {
+.information .reservation .btn-bottom a button {
   font-size: 1.4vw;
   border: none;
   color: white;
   padding: 1vw 6vw;
+  cursor: pointer;
 }
-.information .reservation .btn a button .fas {
+.information .reservation .btn-bottom a button i {
   font-size: 1vw;
   margin-left: 1vw;
 }
-.information .reservation .btn a .btn-online {
+.information .reservation .btn-bottom a .btn-online {
   background: #182A80;
+  margin-right: 0.7vw;
 }
-.information .reservation .btn a .btn-formalite {
+.information .reservation .btn-bottom a .btn-formalite {
   background: #44494f;
-  margin-left: 0.7vw;
+}
+@media (max-width: 900px) {
+  .information .reservation h2 {
+    font-size: 4vw;
+  }
+  .information .reservation .buttons-season a button {
+    font-size: 3vw;
+    padding: 2vw 4vw;
+  }
+  .information .reservation table.vols-table thead th,
+  .information .reservation table.vols-table tbody td {
+    font-size: 3vw;
+    padding: 2vw;
+  }
+  .information .reservation table.vols-table td .btn-reserver {
+    font-size: 3vw;
+    padding: 1vw 2vw;
+  }
+  .information .reservation .btn-bottom a button {
+    font-size: 3vw;
+    padding: 2vw 4vw;
+  }
 }
 
 .image {
@@ -471,6 +440,7 @@ header .nav-click ul li a {
   position: relative;
 }
 .image .images {
+  margin-top: 2vw;
   position: relative;
 }
 .image .images .box {
@@ -486,7 +456,7 @@ header .nav-click ul li a {
   text-decoration: none;
 }
 .image .images .box a p {
-  font-size: 2vw;
+  font-size: 1.4vw;
   color: rgb(255, 255, 255);
 }
 .image .images .box a .fas {
@@ -511,12 +481,12 @@ header .nav-click ul li a {
   background: rgb(242, 243, 245);
 }
 .blog .raison h2 {
-  font-size: 2vw;
+  font-size: 1.6vw;
   margin: 2vw 0;
 }
 .blog .raison p {
   margin: 1vw 0;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
 }
 .blog .raison .btn-raison {
   font-size: 1.4vw;
@@ -530,7 +500,6 @@ header .nav-click ul li a {
 }
 .blog .blog-right {
   margin-left: 3vw;
-  margin-bottom: 2vw;
 }
 .blog .blog-right h2 {
   font-size: 2vw;
@@ -560,6 +529,39 @@ header .nav-click ul li a {
   width: 18vw;
   height: 13vw;
   margin-right: 1vw;
+}
+.blog .blog-right {
+  margin-bottom: 2vw;
+}
+
+/* MINIATURES VIDEO */
+.v-right .video-1 {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.v-right .video-1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.v-right .video-1.active-mini {
+  border: 3px solid #71c043;
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustement des vidéos */
+.videoNgeza {
+  width: 100%;
+  height: auto;
+  max-height: 45vw;
+}
+
+.videoKely {
+  width: 100%;
+  height: auto;
 }
 
 .video {
@@ -643,7 +645,7 @@ header .nav-click ul li a {
   margin: 1vw 0;
 }
 .event .telecharger p {
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   margin-bottom: 1vw;
 }
 .event .telecharger .btn-download {
@@ -683,7 +685,7 @@ header .nav-click ul li a {
   color: #182A80;
 }
 .photo p {
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   text-align: center;
   margin-bottom: 1vw;
   color: #44494f;
@@ -699,25 +701,25 @@ header .nav-click ul li a {
   border-radius: 0.5vw;
 }
 
+.contact h2, .contact p, .contact i, .contact a {
+  color: rgb(255, 255, 255);
+}
 .contact {
   background: rgb(11, 20, 62);
   display: flex;
   justify-content: space-between;
   padding: 2vw;
 }
-.contact h2, .contact p, .contact i, .contact a {
-  color: rgb(255, 255, 255);
-}
 .contact h2 {
-  font-size: 2vw;
+  font-size: 1.6vw;
   text-decoration: underline;
 }
 .contact p {
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   margin: 0.5vw;
 }
 .contact i {
-  font-size: 1.4vw;
+  font-size: 1.2vw;
 }
 .contact .place {
   display: flex;
@@ -753,7 +755,7 @@ header .nav-click ul li a {
 }
 
 footer {
-  background: #182A80;
+  background: rgb(11, 20, 62);
   padding: 2vw;
 }
 footer p {
@@ -765,9 +767,6 @@ footer p {
 @media (max-width: 768px) {
   body {
     overflow-x: hidden !important;
-  }
-  .accueil {
-    padding-top: 15vw;
   }
   .accueil .texte h2 {
     font-size: 5vw;
@@ -931,7 +930,6 @@ footer p {
   }
   .blog .blog-right {
     margin-left: 3vw;
-    margin-bottom: 2vw;
   }
   .blog .blog-right h2 {
     font-size: 2vw;
@@ -960,6 +958,9 @@ footer p {
     width: 40vw;
     height: 30vw;
     margin-right: 1vw;
+  }
+  .blog .blog-right {
+    margin-bottom: 2vw;
   }
   .video h2 {
     font-size: 4vw;

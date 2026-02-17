@@ -8,10 +8,9 @@
         color: $vert;
     }
 }
-@include responsive;
 .contacts{
     display: flex;
-    padding-top: 15vw;
+    padding-top: 3vw; 
     #demande{
         display: none;
 
@@ -61,7 +60,7 @@
             margin-top: 1;
         }
         p{
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             text-align: center;
             margin-bottom: 1vw;
         }
@@ -88,7 +87,7 @@
                 margin-right: 1vw;
             }
             p{
-                font-size: 1.4vw;
+                font-size: 1.2vw;
                 padding-top: .5vw;
             }
         }
@@ -116,7 +115,7 @@
             width: 12vw;
         }
         p{
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             margin: 1vw 0;
         }
         #jour{
@@ -163,7 +162,7 @@
             background: $bleu;
             color: $blanc;
             font-weight: bold;
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             padding: .7vw 2.5vw;
             border: none;
             margin-top: 2vw;
@@ -186,7 +185,7 @@
             }
         }
         p{
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             margin: 1vw 0;
         }
         a{
@@ -204,13 +203,13 @@
     display: flex;
     padding: 1.5vw;
     h2{
-        font-size: 2vw;
+        font-size: 1.6vw;
         text-transform: uppercase;
         color: white;
         margin-bottom: 1vw;
     }
     .btn-info{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         padding: 0.3vw 1vw;
         color: white;
         border-color: white;
@@ -229,14 +228,14 @@
 .guide{
     padding: 0 1vw;
     h2{
-        font-size: 2.4vw;
+        font-size: 1.6vw;
         margin: 1vw 0;
         span{
             font-weight: normal;
         }
     }
     p{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         margin-bottom: 1vw;
     }
     .lien{
@@ -258,7 +257,7 @@
                 p{
                     text-align: center;
                     color: white;
-                    font-size: 2vw;
+                    font-size: 1.2vw;
                     position: absolute;
                 }
                 #villes{
@@ -290,13 +289,13 @@
     background: rgba(242, 243, 245, 1);
     padding: 2vw 0;
     h2{
-        font-size: 2vw;
+        font-size: 1.6vw;
         margin-bottom: 2vw;
         text-align: center;
         color: #182A80;
     }
     p{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         text-align: center;
         margin-bottom: 1vw;
         color: #44494f;
@@ -316,60 +315,60 @@
     }
 }
 .contact{
-    h2, p, i, a{
-        color: $blanc;
-    }
-    background: $mainty;
-    display: flex;
-    justify-content: space-between;
-    padding: 2vw;
-    h2{
-        font-size: 2vw;
-        text-decoration: underline;
-    }
-    p{
-        font-size: 1.4vw;
-        margin: .5vw;
-    }
-    i{
-        font-size: 1.4vw;
-    }
-    .place{
-        display: flex;
-        i{
-            margin-top: 1vw;
-        }
-    }
-    .num-phone, .impression{
-        display: flex;
-        align-items: center;
-    }
-    .num-phone{
-       i{
-        transform: rotate(90deg);
-       }
-    }
-    .mail{
-        a{
-            display: flex;
-            align-items: center;
-        }
-    }
-    .input{
-        display: flex;
-        align-items: center;
-        #email{
-            font-size: 1vw;
-            padding: .5vw 5vw .5vw .5vw;
-        }
-        .btn-souscrire{
-            color: $blanc;
-            background: $vert;
-            border: none;
-            padding: .35vw;
-            font-size: 1.4vw;
-        }
-    }
+  h2, p, i, a{
+      color: $blanc;
+  }
+  background: $mainty;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+  h2{
+      font-size: 1.6vw;
+      text-decoration: underline;
+  }
+  p{
+      font-size: 1.2vw;
+      margin: .5vw;
+  }
+  i{
+      font-size: 1.2vw;
+  }
+  .place{
+      display: flex;
+      i{
+          margin-top: 1vw;
+      }
+  }
+  .num-phone, .impression{
+      display: flex;
+      align-items: center;
+  }
+  .num-phone{
+     i{
+      transform: rotate(90deg);
+     }
+  }
+  .mail{
+      a{
+          display: flex;
+          align-items: center;
+      }
+  }
+  .input{
+      display: flex;
+      align-items: center;
+      #email{
+          font-size: 1vw;
+          padding: .5vw 5vw .5vw .5vw;
+      }
+      .btn-souscrire{
+          color: $blanc;
+          background: $vert;
+          border: none;
+          padding: .35vw;
+          font-size: 1.4vw;
+      }
+  }
 }
 @include footer;
 
@@ -652,7 +651,7 @@
             }
         }
     }
-    
+
     footer{
         p{
             font-size: 4vw;

@@ -2,30 +2,29 @@
 @import "library/variable.scss";
 @import "library/mixins.scss";
 @include header;
+
 #guide{
     border-bottom: .2vw solid $vert;
     a{
         color: $vert;
     }
 }
-@include responsive;
 .titre{
     width: 90vw;
     display: flex;
     margin: 2vw;
-    padding-top: 5vw;
     .left{
         width: 35vw;
         .ttre{
             h1{
-                font-size: 3vw;
+                font-size: 2vw;
                 margin-bottom: 2vw;
                 span{
                     font-weight: normal;
                 }
             }
             p{
-                font-size: 1.4vw;
+                font-size: 1.2vw;
             }
         }
         .lettre{
@@ -40,7 +39,7 @@
                     background: rgba(46, 46, 46, 1);
                     color: rgba(255, 255, 255, 1);
                     p{
-                        font-size: 1.4vw;
+                        font-size: 1.2vw;
                         span{
                             float: right;
                         }
@@ -96,14 +95,14 @@
 
 
 .preparation{
-    margin-top: 15vw;
+    margin-top: 2vw;
     padding: 1vw;
     h2{
-        font-size: 3vw;
+        font-size: 2vw;
         margin-bottom: 2vw;
     }
     p{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
     }
 }
 
@@ -113,7 +112,7 @@
         margin:0 1vw 2vw;
         align-items: center;
         h3{
-            font-size: 2vw;
+            font-size: 1.6vw;
         }
         .tirer{
             width: 57vw;
@@ -168,7 +167,6 @@
     .titre{
         display: block;
         width: 95vw;
-        padding-top: 15vw;
         .left{
             width: 100%;
             .ttre{
@@ -300,7 +298,7 @@
             font-size: 4vw;
         }
     }
-    
+
 }
 
 

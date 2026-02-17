@@ -1,0 +1,851 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .accueil {
+    display: block;
+  }
+  .accueil .texte {
+    width: 100%;
+  }
+  .accueil .texte h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .accueil .texte h2 br {
+    display: none;
+  }
+  .accueil .texte p {
+    font-size: 3vw !important;
+    text-align: center;
+  }
+  .accueil .texte .btn-informe {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+    margin-left: 10vw;
+  }
+  .accueil .image {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: color 0.25s ease;
+  font-size: 1.2vw;
+}
+
+header {
+  width: 100%;
+  background: rgb(11, 20, 62);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  padding: 0 6vw;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+header .logo {
+  position: relative;
+  z-index: 1100;
+}
+header .logo img {
+  width: clamp(80px, 9vw, 140px);
+  display: block;
+}
+header nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+header nav a {
+  font-weight: 500;
+  position: relative;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgb(113, 192, 67);
+  transition: width 0.3s ease;
+}
+header nav a:hover, header nav a.active {
+  color: rgb(113, 192, 67);
+}
+header nav a:hover::after, header nav a.active::after {
+  width: 100%;
+}
+header .cta-btn {
+  background: rgb(254, 202, 8);
+  color: rgb(11, 20, 62);
+  font-size: 1vw;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header .cta-btn:hover {
+  background: rgb(113, 192, 67);
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+header .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+header .hamburger span {
+  width: 28px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+header .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+header .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+  a {
+    font-size: 5vw;
+  }
+  header {
+    padding: 0 5vw;
+  }
+  header .hamburger {
+    display: flex;
+  }
+  header .cta-btn {
+    font-size: 4vw;
+    padding: 12px 24px;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(11, 20, 62);
+    z-index: 1050;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  }
+  header nav.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  header nav a {
+    font-weight: 500;
+  }
+  header nav a::after {
+    bottom: -8px;
+  }
+}
+#contact {
+  border-bottom: 0.2vw solid rgb(113, 192, 67);
+}
+#contact a {
+  color: rgb(113, 192, 67);
+}
+
+.contacts {
+  display: flex;
+  padding-top: 3vw;
+}
+.contacts #demande {
+  display: none;
+}
+.contacts .plana {
+  width: 29vw;
+  height: 60vw;
+  padding: 2vw;
+  box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.5);
+  margin: 0 2vw;
+  border-radius: 1vw;
+}
+.contacts .plana .plane1 {
+  margin: 1vw;
+  margin-left: 7vw;
+  position: relative;
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+  background: rgba(113, 192, 67, 0.5);
+}
+.contacts .plana .plane1 .plane2 {
+  position: absolute;
+  top: 0.5vw;
+  left: 0.5vw;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background: rgba(113, 192, 67, 0.7);
+}
+.contacts .plana .plane1 .plane2 .fa-plane {
+  position: absolute;
+  top: 0.6vw;
+  left: 0.6vw;
+  font-size: 1.5vw;
+  padding: 1vw;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid rgb(113, 192, 67);
+  background: rgba(113, 192, 67, 0.9);
+  z-index: 1;
+}
+.contacts .plana h3 {
+  font-weight: normal;
+  font-size: 1.4vw;
+  text-align: center;
+  margin-bottom: 2vw;
+  margin-top: 1;
+}
+.contacts .plana p {
+  font-size: 1.2vw;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+.contacts .plana .btn-devis {
+  font-size: 1.4vw;
+  color: white;
+  background: rgb(113, 192, 67);
+  border: none;
+  padding: 1vw 2vw;
+  display: block;
+  margin: 0 auto;
+}
+.contacts .plana #ou {
+  margin: 1vw 0;
+  font-size: 1vw;
+}
+.contacts .plana .phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contacts .plana .phone .fa-phone {
+  transform: rotate(90deg);
+  color: rgb(113, 192, 67);
+  margin-right: 1vw;
+}
+.contacts .plana .phone p {
+  font-size: 1.2vw;
+  padding-top: 0.5vw;
+}
+.contacts .demande {
+  width: 40vw;
+}
+.contacts .demande h2 {
+  font-size: 2vw;
+}
+.contacts .demande input {
+  padding: 0.7vw 0.5vw;
+  margin: 0.5vw 0;
+  border-radius: 0.7vw;
+}
+.contacts .demande #nom, .contacts .demande #time {
+  width: 19vw;
+}
+.contacts .demande #prenom {
+  width: 18vw;
+}
+.contacts .demande #email {
+  width: 25vw;
+}
+.contacts .demande #number {
+  width: 12vw;
+}
+.contacts .demande p {
+  font-size: 1.2vw;
+  margin: 1vw 0;
+}
+.contacts .demande #jour {
+  width: 10vw;
+  margin-left: 2vw;
+}
+.contacts .demande #adulte, .contacts .demande #enfant, .contacts .demande #bebe {
+  width: 10vw;
+  margin-right: 2vw;
+}
+.contacts .demande ::-moz-placeholder {
+  font-size: 1vw;
+}
+.contacts .demande ::placeholder {
+  font-size: 1vw;
+}
+.contacts .demande textarea {
+  width: 90%;
+}
+.contacts .demande .capcha {
+  width: 30vw;
+  height: 8vw;
+  box-shadow: 0 0 1px black;
+  padding: 1vw;
+}
+.contacts .demande .capcha .check {
+  display: flex;
+  align-items: center;
+}
+.contacts .demande .capcha .check .carre {
+  width: 2vw;
+  height: 2vw;
+  box-shadow: 0 0 1px black;
+  margin-right: 1vw;
+}
+.contacts .demande .capcha .texte {
+  float: right;
+}
+.contacts .demande .capcha .texte p {
+  font-size: 0.7vw;
+}
+.contacts .demande .capcha .texte p a {
+  color: black;
+  text-decoration: none;
+}
+.contacts .demande .btn-envoyer {
+  background: #182A80;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1.2vw;
+  padding: 0.7vw 2.5vw;
+  border: none;
+  margin-top: 2vw;
+}
+.contacts .carte iframe {
+  width: 30vw;
+  height: 25vw;
+}
+.contacts .carte a {
+  color: black;
+}
+.contacts .carte a .pleine {
+  background: #aaa;
+  padding-top: 0.7vw;
+  border-bottom: 5px solid #000;
+}
+.contacts .carte a .pleine p {
+  text-align: center;
+}
+.contacts .carte p {
+  font-size: 1.2vw;
+  margin: 1vw 0;
+}
+.contacts .carte a {
+  text-decoration: none;
+}
+.contacts .carte a .btn-cvg {
+  font-size: 1.4vw;
+  padding: 0.7vw 2vw;
+}
+
+.info {
+  background: rgb(35, 163, 177);
+  margin: 2vw 1vw;
+  display: flex;
+  padding: 1.5vw;
+}
+.info h2 {
+  font-size: 1.6vw;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1vw;
+}
+.info .btn-info {
+  font-size: 1.2vw;
+  padding: 0.3vw 1vw;
+  color: white;
+  border-color: white;
+  background: rgb(35, 163, 177);
+}
+.info .information, .info .flash {
+  width: 32%;
+  padding: 3vw;
+}
+.info .profit {
+  padding: 3vw;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.guide {
+  padding: 0 1vw;
+}
+.guide h2 {
+  font-size: 1.6vw;
+  margin: 1vw 0;
+}
+.guide h2 span {
+  font-weight: normal;
+}
+.guide p {
+  font-size: 1.2vw;
+  margin-bottom: 1vw;
+}
+.guide .lien {
+  display: flex;
+  justify-content: space-around;
+}
+.guide .lien a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+.guide .lien a .ville {
+  width: 23.5vw;
+  height: 12vw;
+  background: #182A80;
+}
+.guide .lien a .ville img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+.guide .lien a .ville p {
+  text-align: center;
+  color: white;
+  font-size: 1.2vw;
+  position: absolute;
+}
+.guide .lien a .ville #villes {
+  top: 1.3vw;
+  left: 5vw;
+}
+.guide .lien a .ville #parc {
+  top: 1vw;
+  left: 6vw;
+}
+.guide .lien a .ville #peuple {
+  top: 2vw;
+  left: 5.5vw;
+}
+.guide .lien a .ville #tourisme {
+  top: 3vw;
+  left: 4.5vw;
+}
+
+.villes .ville {
+  overflow: hidden;
+}
+
+.photo {
+  background: rgb(242, 243, 245);
+  padding: 2vw 0;
+}
+.photo h2 {
+  font-size: 1.6vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  color: #182A80;
+}
+.photo p {
+  font-size: 1.2vw;
+  text-align: center;
+  margin-bottom: 1vw;
+  color: #44494f;
+}
+
+.parent {
+  padding: 1vw 3vw;
+}
+.parent .slide-im .img img {
+  width: 18vw;
+  height: 10vw;
+  margin: 1vw 1vw;
+  border-radius: 0.5vw;
+}
+
+.contact h2, .contact p, .contact i, .contact a {
+  color: rgb(255, 255, 255);
+}
+.contact {
+  background: rgb(11, 20, 62);
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+}
+.contact h2 {
+  font-size: 1.6vw;
+  text-decoration: underline;
+}
+.contact p {
+  font-size: 1.2vw;
+  margin: 0.5vw;
+}
+.contact i {
+  font-size: 1.2vw;
+}
+.contact .place {
+  display: flex;
+}
+.contact .place i {
+  margin-top: 1vw;
+}
+.contact .num-phone, .contact .impression {
+  display: flex;
+  align-items: center;
+}
+.contact .num-phone i {
+  transform: rotate(90deg);
+}
+.contact .mail a {
+  display: flex;
+  align-items: center;
+}
+.contact .input {
+  display: flex;
+  align-items: center;
+}
+.contact .input #email {
+  font-size: 1vw;
+  padding: 0.5vw 5vw 0.5vw 0.5vw;
+}
+.contact .input .btn-souscrire {
+  color: rgb(255, 255, 255);
+  background: rgb(113, 192, 67);
+  border: none;
+  padding: 0.35vw;
+  font-size: 1.4vw;
+}
+
+footer {
+  background: rgb(11, 20, 62);
+  padding: 2vw;
+}
+footer p {
+  color: rgb(255, 255, 255);
+  font-size: 1.4vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  .contacts {
+    display: block;
+  }
+  .contacts #demande {
+    display: block;
+    width: 99%;
+    margin: 2vw 1vw;
+  }
+  .contacts #demande h2 {
+    font-size: 3.5vw;
+  }
+  .contacts #demande input {
+    padding: 2vw 0.5vw;
+    margin: 2vw 0;
+    border-radius: 1vw;
+  }
+  .contacts #demande #nom {
+    width: 48vw;
+  }
+  .contacts #demande #prenom {
+    width: 46vw;
+  }
+  .contacts #demande #email {
+    width: 70vw;
+  }
+  .contacts #demande #number {
+    width: 24vw;
+  }
+  .contacts #demande p {
+    font-size: 4vw;
+    margin: 1vw 0;
+  }
+  .contacts #demande #time {
+    width: 70vw;
+  }
+  .contacts #demande #jour {
+    width: 40vw;
+  }
+  .contacts #demande #adulte, .contacts #demande #enfant, .contacts #demande #bebe {
+    width: 40vw;
+    margin-right: 2vw;
+  }
+  .contacts #demande ::-moz-placeholder {
+    font-size: 3vw;
+  }
+  .contacts #demande ::placeholder {
+    font-size: 3vw;
+  }
+  .contacts #demande .capcha {
+    width: 70vw;
+    height: 15vw;
+    box-shadow: 0 0 1px black;
+    padding: 1vw;
+  }
+  .contacts #demande .capcha .check {
+    display: flex;
+    align-items: center;
+  }
+  .contacts #demande .capcha .check .carre {
+    width: 4vw;
+    height: 4vw;
+    box-shadow: 0 0 1px black;
+    margin-right: 1vw;
+  }
+  .contacts #demande .capcha .texte {
+    float: right;
+  }
+  .contacts #demande .capcha .texte p {
+    font-size: 2vw;
+  }
+  .contacts #demande .capcha .texte p a {
+    color: black;
+    text-decoration: none;
+  }
+  .contacts #demande .btn-envoyer {
+    font-size: 3vw;
+    padding: 1vw 2vw;
+  }
+  .contacts .plana {
+    margin-bottom: 2vw;
+    width: 95%;
+    height: 90vw;
+  }
+  .contacts .plana .plane1 {
+    margin-left: 43vw;
+    margin-bottom: 2vw;
+  }
+  .contacts .plana h3 {
+    font-size: 4vw;
+  }
+  .contacts .plana p {
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    color: rgb(119, 132, 158);
+  }
+  .contacts .plana .btn-devis, .contacts .plana #ou {
+    display: none;
+  }
+  .contacts .plana .phone {
+    border: 1px solid black;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    margin-left: 28vw;
+    margin-bottom: 3vw;
+  }
+  .contacts .plana .phone i {
+    font-size: 3vw;
+  }
+  .contacts .plana .phone p {
+    font-size: 3vw;
+  }
+  .contacts #dmd {
+    display: none;
+  }
+  .contacts .carte iframe {
+    width: 100%;
+    height: 40vw;
+  }
+  .contacts .carte a {
+    color: black;
+  }
+  .contacts .carte a .pleine {
+    background: #aaa;
+    padding-top: 1vw;
+    border-bottom: 5px solid #000;
+  }
+  .contacts .carte a .pleine p {
+    text-align: center;
+    font-size: 3vw;
+  }
+  .contacts .carte p {
+    font-size: 3vw;
+    margin: 3vw 0;
+  }
+  .contacts .carte a {
+    text-decoration: none;
+    margin: 2vw 0;
+  }
+  .contacts .carte a .btn-cvg {
+    font-size: 3vw;
+    width: 95%;
+    padding: 2vw 0;
+    margin-left: 2.5vw;
+  }
+  .info {
+    display: block;
+    background: white;
+  }
+  .info .information, .info .profit, .info .flash {
+    width: 100%;
+    height: 30vw;
+    background: rgb(35, 163, 177);
+    margin: 1vw 0;
+    padding: 2vw;
+  }
+  .info h2 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+  .info .btn-info {
+    font-size: 3vw;
+    padding: 1vw 2vw;
+    margin-bottom: 2vw;
+  }
+  .guide h2 {
+    font-size: 6vw;
+  }
+  .guide p {
+    font-size: 4vw;
+  }
+  .guide .lien {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .guide .lien a {
+    margin: 2vw 1vw;
+  }
+  .guide .lien a .ville {
+    width: 45vw;
+    height: 20vw;
+    background: #182A80;
+  }
+  .guide .lien a .ville img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+  }
+  .guide .lien a .ville p {
+    font-size: 3.5vw;
+    position: absolute;
+  }
+  .guide .lien a .ville #villes {
+    top: 1.3vw;
+    left: 10vw;
+  }
+  .guide .lien a .ville #parc {
+    top: 1vw;
+    left: 11vw;
+  }
+  .guide .lien a .ville #peuple {
+    top: 2vw;
+    left: 10vw;
+  }
+  .guide .lien a .ville #tourisme {
+    top: 3vw;
+    left: 10.5vw;
+  }
+  .photo h2, .photo p {
+    font-size: 4vw;
+  }
+  .photo .slide-img img {
+    width: 48vw;
+    height: 25vw;
+  }
+  .contact {
+    display: block;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 4vw;
+    margin: 2vw 0;
+  }
+  .contact p {
+    font-size: 3vw;
+    margin: 2vw 0;
+  }
+  .contact i {
+    font-size: 3vw;
+    margin-right: 2vw;
+  }
+  .contact .place {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact .mail, .contact .num-phone, .contact .impression {
+    margin: 2vw 30vw;
+  }
+  .parent {
+    padding: 0 5vw 0 6vw;
+  }
+  .parent .slide-im .img img {
+    width: 43vw !important;
+    height: 25vw !important;
+    margin: 1vw 0.5vw;
+    border-radius: 0.5vw;
+  }
+  .newsletter {
+    margin-bottom: 2vw;
+  }
+  .newsletter .input input {
+    width: 75vw;
+    height: 6vw;
+    padding: 1vw;
+  }
+  .newsletter .input ::-moz-placeholder {
+    font-size: 3vw;
+  }
+  .newsletter .input ::placeholder {
+    font-size: 3vw;
+  }
+  .newsletter .input .btn-souscrire {
+    font-size: 3.3vw;
+    padding: 1vw;
+  }
+  footer p {
+    font-size: 4vw;
+  }
+}
+button:hover {
+  background: orangered !important;
+  color: white !important;
+  border-color: orangered !important;
+}
+
+.btn-head:hover {
+  background: rgb(113, 192, 67) !important;
+  border-color: white !important;
+  transform: scale(1.2);
+  color: white !important;
+}
+
+.ville:hover > img {
+  transform: scale(1.4);
+}
+
+.fa-google-plus-g:hover {
+  color: orange !important;
+}
+
+.fa-facebook-f:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-twitter:hover {
+  color: rgb(37, 149, 214) !important;
+}
+
+.fa-youtube:hover {
+  color: red !important;
+}/*# sourceMappingURL=Contact.css.map */

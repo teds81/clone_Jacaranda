@@ -1,5 +1,3 @@
-// accueil :
-
 const btnHead = document.querySelector(".btn-head")
 const body = document.querySelector("body")
 const nav = document.querySelector(".nav-click")
@@ -30,29 +28,14 @@ function manalaVideo(index)
 
 videoKely.forEach((element,index)=>{
     element.addEventListener(("click"),()=>{
-        // console.log(videoKely[index]);
         manalaVideo(index)})
 })
 
 icon1.forEach((element,index)=>{
     element.addEventListener(("click"),()=>{
-        // console.log(videoKely[index]);
         manalaVideo(index)})
 })
 
-
-// btnHead.addEventListener("mouseover",()=>{
-//     btnHead.style.transform ="scale(1.2)"
-//     btnHead.style.color ="white"
-//     btnHead.style.borderColor ="white"
-//     btnHead.style.background ="rgb(97, 178, 89)"
-// })
-// btnHead.addEventListener("mouseout",()=>{
-//     btnHead.style.transform ="scale(1.0)"
-//     btnHead.style.color ="rgba(254, 202, 8, 1)"
-//     btnHead.style.borderColor ="rgba(254, 202, 8, 1)"
-//     btnHead.style.background ="#444"
-// })
 btnHead.addEventListener("click",()=>{
     btnHead.style.color ="rgba(254, 202, 8, 1)"
     btnHead.style.borderColor ="rgba(254, 202, 8, 1)"

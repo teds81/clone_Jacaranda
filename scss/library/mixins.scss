@@ -1,3 +1,4 @@
+
 @mixin flex($jc:center,$ai:center,$fd:row){
     display: flex;
     justify-content: $jc;
@@ -40,202 +41,184 @@
     }
 }
 
-@mixin header{
-    header{
-        width: 100%;
-        color: white;
-        background: $mainty;
-        padding: .5vw 0;
+
+
+
+@mixin header {
+
+  // Styles de base pour les liens
+  a {
+    text-decoration: none;
+    color: $blanc;
+    transition: color 0.25s ease;
+    font-size: 1.2vw;
+  }
+
+  header {
+    width: 100%;
+    background: $mainty;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px; // Hauteur fixe pour un meilleur contrôle
+    padding: 0 6vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+    .logo {
+      position: relative;
+      z-index: 1100; // Force le logo à rester AU-DESSUS du menu qui descend
+
+      img {
+        width: clamp(80px, 9vw, 140px);
+        display: block;
+      }
+    }
+
+    // Navigation Desktop
+    nav {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+
+      a {
+        font-weight: 500;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 0;
+          height: 2px;
+          background: $vert;
+          transition: width 0.3s ease;
+        }
+
+        &:hover,
+        &.active {
+          color: $vert;
+        }
+
+        &:hover::after,
+        &.active::after {
+          width: 100%;
+        }
+      }
+    }
+
+    .cta-btn {
+      background: $jaune;
+      color: $mainty;
+      font-size: 1vw;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $vert;
+        color: $blanc;
+        transform: scale(1.1);
+      }
+    }
+
+    // Hamburger Button
+    .hamburger {
+      display: none; // Caché sur desktop
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 1100; // Reste au-dessus du menu mobile
+
+      span {
+        width: 28px;
+        height: 3px;
+        background: $blanc;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+      }
+    }
+  }
+
+  // --- 3. Responsive Mobile (Max 768px) ---
+  @media (max-width: 768px) {
+
+    a {
+      font-size: 5vw; // Taille de texte plus grande en mobile
+    }
+
+    header {
+      padding: 0 5vw;
+
+      .hamburger {
+        display: flex;
+      }
+
+      .cta-btn {
+        font-size: 4vw;
+        padding: 12px 24px;
+      }
+
+      nav {
+        // Configuration du menu "Rideau"
         position: fixed;
         top: 0;
-        z-index: 5;
-        .head{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .logo{
-                margin-left: 6vw;
-                img{
-                    width: 9vw;
-                }
-            }
-            .right{
-                display: flex;
-                align-items: center;
-                .nav{
-                    ul{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        li{
-                            list-style: none;
-                            font-size: 2vw;
-                            text-transform: lowercase;
-                            margin-left: 2vw;
-                            a{
-                                text-decoration: none;
-                                color: white;
-                                font-weight: 200;
-                            }
-                        }
-                        .btn-head{
-                            margin:1vw 5vw;
-                            font-size: 1.4vw;
-                            font-weight: 100;
-                            background: $mainty;
-                            padding: .5vw;
-                            border-color: $jaune;
-                            a{
-                                color: $jaune;
-                                text-decoration: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .bars, .close{
-            font-size: 10vw;
-            margin-right: 3vw;
-            display: none;
-        }
-        // @include style;
-        .nav-click{
-            display: none;
-            width: 100%;
-            height: 100vh;
-            position: absolute;
-            top: 14vw !important;
-            margin-top: -100%;
-            background: #444;
-            overflow: hidden;
-            transition: top 15s both; 
-            z-index: 12;
-            ul{
-                padding: 1.5vw;
-                li{
-                    padding: 1vw 0;
-                    list-style: none;
-                    font-size: 3vw;
-                    text-transform: lowercase;
-                    a{
-                        text-decoration: none;
-                        color: $blanc; 
-                        font-weight: 200;
-                    }
-                }
-            }
-        }
-    }
-    
-    .right{
-        .nav{
-            ul{
-                .home:hover{
-                    a{
-                        border-bottom: .2vw solid $vert !important;
-                        color: $vert; 
-                    }
-                }
-            }
-        }
-    }
-    .nav-click{
-        ul{
-            .home:hover{
-                a{
-                    color: $vert;
-                }
-            }
-        }
-    }
-}
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: $mainty;
+        z-index: 1050; // Entre le header et les éléments interactifs (logo/hamburger)
 
-// responsive
-@mixin responsive{
-    @media (max-width: 768px){
-        header{
-            padding-bottom: 2vw;
-            .head{
-                .logo{
-                    margin-left: 5vw;
-                    img{
-                        width: 25vw;
-                    }
-                }
-            }
-                .btn-head{
-                    font-size: 1.4vw;
-                }
-                .nav{
-                    display: none;
-                }
-                .bars{
-                    display: block;
-                    font-size: 8vw;
-                    margin-right: 2vw;
-                }
-                .close{
-                    font-size: 8vw;
-                }
-                .nav-click{
-                    display: none;
-                    position: absolute;
-                    padding-top: 3vw;
-                    background:$mainty;
-                    ul{
-                        display: flex;flex-direction:column !important ;
-                        li{
-                            padding: 1vw 0;
-                            list-style: none;
-                            font-size: 6vw;
-                            text-transform: lowercase;
-                            border-bottom: .2vw solid white;
-                            a{
-                                text-decoration: none;
-                                color: white;
-                                font-weight: 200;
-                            }
-                        }
-                        .btn-head{
-                            margin: 20vw 5vw 1vw;
-                            font-size: 5vw;
-                            font-weight: 100;
-                            background: $mainty;
-                            padding: 1vw 30vw;
-                            border-color: $jaune;
-                            a{
-                                color: $jaune;
-                                text-decoration: none;
-                            }
-                        }
-                        .btn-head:hover{
-                            color: white;
-                            background:  $vert;
-                            border-color: $vert;
-                            transform: scale(1.1);
-                        }
-                    }
-                }
-                .nav-click.active{
-                    display: block !important;
-                    margin-top: 0;
-                    transition: 10s;
-                    overflow: hidden;
-                }
-                .nav-click.close{
-                    display: none !important;
-                    margin-top: 0;
-                    transition: 3s;
-                    overflow: visible;
-                }
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        // État initial (caché en haut)
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+
+        // État quand on clique (ajouté par le JS)
+        &.show {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
         }
+
+        a {
+          font-weight: 500;
+          &::after {
+            bottom: -8px; // Plus d'espace pour le soulignement en mobile
+          }
+        }
+      }
     }
+  }
 }
 
 @mixin footer{
     footer{
-        background: $bleu;
+        background: $mainty;
         padding: 2vw;
         p{
             color: $blanc;
